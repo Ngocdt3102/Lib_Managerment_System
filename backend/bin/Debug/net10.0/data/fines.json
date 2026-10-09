@@ -1,0 +1,32 @@
+[
+  {
+    "_id": { "$oid": "660000000000000000000301" },
+    "borrowRecordId": { "$oid": "660000000000000000000204" },
+    "userId": { "$oid": "660000000000000000000004" },
+    "amount": 45000,
+    "reason": "Mượn quá hạn 9 ngày sách Deep Learning",
+    "status": "Pending",
+    "paidAt": null,
+    "createdAt": { "$date": "2026-01-20T08:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000302" },
+    "borrowRecordId": { "$oid": "660000000000000000000205" },
+    "userId": { "$oid": "660000000000000000000007" },
+    "amount": 25000,
+    "reason": "Mượn quá hạn 5 ngày sách Designing Data-Intensive Applications",
+    "status": "Paid",
+    "paidAt": { "$date": "2026-02-05T09:30:00.000Z" },
+    "createdAt": { "$date": "2026-01-27T08:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000303" },
+    "borrowRecordId": { "$oid": "660000000000000000000206" },
+    "userId": { "$oid": "660000000000000000000005" },
+    "amount": 120000,
+    "reason": "Bồi thường mất sách Đắc Nhân Tâm",
+    "status": "Pending",
+    "paidAt": null,
+    "createdAt": { "$date": "2026-02-02T10:00:00.000Z" }
+  }
+]

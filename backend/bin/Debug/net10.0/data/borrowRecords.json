@@ -1,0 +1,68 @@
+[
+  {
+    "_id": { "$oid": "660000000000000000000201" },
+    "userId": { "$oid": "660000000000000000000004" },
+    "bookId": { "$oid": "660000000000000000000101" },
+    "borrowDate": { "$date": "2026-02-01T09:00:00.000Z" },
+    "dueDate": { "$date": "2026-02-15T09:00:00.000Z" },
+    "returnDate": null,
+    "status": "Borrowed",
+    "notes": "Độc giả mượn làm đồ án tốt nghiệp",
+    "createdAt": { "$date": "2026-02-01T09:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000202" },
+    "userId": { "$oid": "660000000000000000000005" },
+    "bookId": { "$oid": "660000000000000000000102" },
+    "borrowDate": { "$date": "2026-02-05T10:30:00.000Z" },
+    "dueDate": { "$date": "2026-02-19T10:30:00.000Z" },
+    "returnDate": null,
+    "status": "Borrowed",
+    "notes": "Mượn nghiên cứu môn Kiến trúc phần mềm",
+    "createdAt": { "$date": "2026-02-05T10:30:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000203" },
+    "userId": { "$oid": "660000000000000000000006" },
+    "bookId": { "$oid": "660000000000000000000106" },
+    "borrowDate": { "$date": "2026-01-10T14:00:00.000Z" },
+    "dueDate": { "$date": "2026-01-24T14:00:00.000Z" },
+    "returnDate": { "$date": "2026-01-22T16:10:00.000Z" },
+    "status": "Returned",
+    "notes": "Đã trả sách nguyên vẹn đúng hạn",
+    "createdAt": { "$date": "2026-01-10T14:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000204" },
+    "userId": { "$oid": "660000000000000000000004" },
+    "bookId": { "$oid": "660000000000000000000105" },
+    "borrowDate": { "$date": "2026-01-05T08:15:00.000Z" },
+    "dueDate": { "$date": "2026-01-19T08:15:00.000Z" },
+    "returnDate": null,
+    "status": "Overdue",
+    "notes": "Quá hạn mượn chưa hoàn trả",
+    "createdAt": { "$date": "2026-01-05T08:15:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000205" },
+    "userId": { "$oid": "660000000000000000000007" },
+    "bookId": { "$oid": "660000000000000000000104" },
+    "borrowDate": { "$date": "2026-01-12T11:00:00.000Z" },
+    "dueDate": { "$date": "2026-01-26T11:00:00.000Z" },
+    "returnDate": null,
+    "status": "Overdue",
+    "notes": "Quá hạn mượn chưa hoàn trả",
+    "createdAt": { "$date": "2026-01-12T11:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000206" },
+    "userId": { "$oid": "660000000000000000000005" },
+    "bookId": { "$oid": "660000000000000000000107" },
+    "borrowDate": { "$date": "2026-01-15T15:30:00.000Z" },
+    "dueDate": { "$date": "2026-01-29T15:30:00.000Z" },
+    "returnDate": { "$date": "2026-02-02T10:00:00.000Z" },
+    "status": "Lost",
+    "notes": "Độc giả báo làm mất sách khi mượn",
+    "createdAt": { "$date": "2026-01-15T15:30:00.000Z" }
+  }
+]

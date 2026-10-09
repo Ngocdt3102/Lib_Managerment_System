@@ -1,0 +1,38 @@
+[
+  {
+    "_id": { "$oid": "660000000000000000000010" },
+    "name": "Công Nghệ Thông Tin",
+    "description": "Sách về lập trình web, phần mềm, kiến trúc hệ thống, cơ sở dữ liệu và DevOps.",
+    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000011" },
+    "name": "Khoa Học Máy Tính & AI",
+    "description": "Sách nghiên cứu trí tuệ nhân tạo, Machine Learning, Deep Learning và thuật toán nâng cao.",
+    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000012" },
+    "name": "Kinh Tế & Quản Trị Kinh Doanh",
+    "description": "Sách quản trị doanh nghiệp, tài chính doanh nghiệp, đầu tư, marketing và khởi nghiệp.",
+    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000013" },
+    "name": "Văn Học & Tiểu Thuyết",
+    "description": "Các tác phẩm văn học kinh điển trong nước và thế giới, tiểu thuyết trinh thám, viễn tưởng.",
+    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000014" },
+    "name": "Kỹ Năng Sống & Phát Triển Bản Thân",
+    "description": "Sách rèn luyện tư duy, kỹ năng giao tiếp, quản lý thời gian và phát triển bản thân.",
+    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "660000000000000000000015" },
+    "name": "Ngoại Ngữ & Tiếng Anh",
+    "description": "Giáo trình luyện thi IELTS, TOEIC, từ vựng và ngữ pháp tiếng Anh chuyên ngành.",
+    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+  }
+]

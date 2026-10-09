@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # 1. MongoDB Database Container
+  mongodb:
+    image: mongo:latest
+    container_name: lib_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - lib_network
+
+  # 2. ASP.NET Core Web API Backend Container
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: lib_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - MongoDbSettings__ConnectionString=mongodb://mongodb:27017
+      - MongoDbSettings__DatabaseName=LibManagementDb
+      - JwtSettings__SecretKey=LibManagementSystem_Super_Secret_Key_2026_Key_Must_Be_Long_Enough!
+      - JwtSettings__Issuer=LibManagementSystemAPI
+      - JwtSettings__Audience=LibManagementSystemClient
+      - JwtSettings__ExpirationInMinutes=1440
+    depends_on:
+      - mongodb
+    networks:
+      - lib_network
+
+  # 3. React.js Frontend Container (Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: lib_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - lib_network
+
+volumes:
+  mongodb_data:
+
+networks:
+  lib_network:
+    driver: bridge
