@@ -15,6 +15,7 @@ services:
 
   # 2. ASP.NET Core Web API Backend Container
   backend:
+    image: dtngoc3103/lib-management-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -36,6 +37,7 @@ services:
 
   # 3. React.js Frontend Container (Nginx)
   frontend:
+    image: dtngoc3103/lib-management-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
