@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_HUB_CREDENTIALS_ID = 'docker-hub-credentials'
-        DOCKER_HUB_USER = 'your-dockerhub-username'
+        DOCKER_HUB_USER = 'dtngoc3103'
         BACKEND_IMAGE = "${DOCKER_HUB_USER}/lib-management-backend"
         FRONTEND_IMAGE = "${DOCKER_HUB_USER}/lib-management-frontend"
         IMAGE_TAG = "${BUILD_NUMBER}"
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 echo '🚀 Đẩy Docker Images lên Docker Hub Registry...'
                 withCredentials([usernamePassword(credentialsId: "${DOCKER_HUB_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                    bat "docker login -u %DOCKER_USER% -p %DOCKER_PASS%"
+                    bat 'echo %DOCKER_PASS%| docker login -u %DOCKER_USER% --password-stdin'
                     bat "docker push ${BACKEND_IMAGE}:${IMAGE_TAG}"
                     bat "docker push ${BACKEND_IMAGE}:latest"
                     bat "docker push ${FRONTEND_IMAGE}:${IMAGE_TAG}"
