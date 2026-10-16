@@ -60,6 +60,7 @@ pipeline {
         stage('6. Deploy System via Docker Compose') {
             steps {
                 echo '🔄 Khởi chạy / Cập nhật Container trên Server bằng Docker Compose...'
+                bat 'docker rm -f lib_frontend lib_backend lib_mongodb 2>nul || ver >nul'
                 bat 'docker-compose down'
                 bat 'docker-compose up -d --build'
             }

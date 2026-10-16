@@ -1,4 +1,4 @@
-version: '3.8'
+name: lib_management_system
 
 services:
   # 1. MongoDB Database Container
