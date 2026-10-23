@@ -55,3 +55,6 @@ D:\Programming_learning\Lib_Managerment_System\backend\bin\Debug\net10.0\data\bo
 D:\Programming_learning\Lib_Managerment_System\backend\bin\Debug\net10.0\data\categories.json
 D:\Programming_learning\Lib_Managerment_System\backend\bin\Debug\net10.0\data\fines.json
 D:\Programming_learning\Lib_Managerment_System\backend\bin\Debug\net10.0\data\users.json
+D:\Programming_learning\Lib_Managerment_System\backend\obj\Debug\net10.0\LibManagementSystem.API.sourcelink.json
+D:\Programming_learning\Lib_Managerment_System\backend\bin\Debug\net10.0\LibManagementSystem.API.xml
+D:\Programming_learning\Lib_Managerment_System\backend\obj\Debug\net10.0\LibManagementSystem.API.xml

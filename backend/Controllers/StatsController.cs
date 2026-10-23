@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LibManagementSystem.API.Controllers
 {
+    /// <summary>
+    /// Thống kê và báo cáo tổng quan dữ liệu thư viện
+    /// </summary>
     [ApiController]
     [Route("api/v1/[controller]")]
     [Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Librarian}")]
@@ -17,6 +20,11 @@ namespace LibManagementSystem.API.Controllers
             _statsService = statsService;
         }
 
+        /// <summary>
+        /// Lấy số liệu thống kê tổng quan (tổng đầu sách, số sách đang mượn, quá hạn, tổng tiền phạt)
+        /// </summary>
+        /// <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+        /// <response code="200">Dữ liệu thống kê tổng quan</response>
         [HttpGet("overview")]
         public async Task<IActionResult> GetOverview()
         {

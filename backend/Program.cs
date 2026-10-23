@@ -60,7 +60,37 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 // 5. Configure Swagger
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.OpenApiInfo
+    {
+        Title = "LibManagementSystem API",
+        Version = "v1",
+        Description = "Hệ Thống Quản Lý Thư Viện - API Documentation & Testing"
+    });
+
+    c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = Microsoft.OpenApi.ParameterLocation.Header,
+        Description = "Nhập token JWT theo định dạng: Bearer {token}"
+    });
+
+    c.AddSecurityRequirement(document => new Microsoft.OpenApi.OpenApiSecurityRequirement
+    {
+        [new Microsoft.OpenApi.OpenApiSecuritySchemeReference("Bearer", document)] = []
+    });
+
+    var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+    if (File.Exists(xmlPath))
+    {
+        c.IncludeXmlComments(xmlPath);
+    }
+});
 
 var app = builder.Build();
 
@@ -84,12 +114,17 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Configure HTTP pipeline
-if (app.Environment.IsDevelopment() || true)
+// Configure HTTP pipeline (Luôn bật Swagger để test API trực tiếp)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "LibManagementSystem API v1");
+    c.RoutePrefix = "swagger";
+    c.DocumentTitle = "Thư Viện API Documentation & Testing";
+});
+
+// Tự động chuyển hướng từ trang chủ sang Swagger UI
+app.MapGet("/", () => Results.Redirect("/swagger"));
 
 app.UseCors("AllowAll");
 

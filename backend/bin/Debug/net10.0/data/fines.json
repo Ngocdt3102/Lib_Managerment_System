@@ -1,32 +1,290 @@
 [
   {
-    "_id": { "$oid": "660000000000000000000301" },
-    "borrowRecordId": { "$oid": "660000000000000000000204" },
-    "userId": { "$oid": "660000000000000000000004" },
-    "amount": 45000,
-    "reason": "Mượn quá hạn 9 ngày sách Deep Learning",
-    "status": "Pending",
-    "paidAt": null,
-    "createdAt": { "$date": "2026-01-20T08:00:00.000Z" }
-  },
-  {
-    "_id": { "$oid": "660000000000000000000302" },
-    "borrowRecordId": { "$oid": "660000000000000000000205" },
-    "userId": { "$oid": "660000000000000000000007" },
-    "amount": 25000,
-    "reason": "Mượn quá hạn 5 ngày sách Designing Data-Intensive Applications",
+    "_id": {
+      "$oid": "00000000000000000000012d"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000d1"
+    },
+    "userId": {
+      "$oid": "00000000000000000000000d"
+    },
+    "amount": 10000,
+    "reason": "Quá hạn 2 ngày sách Designing Data-Intensive Applications",
     "status": "Paid",
-    "paidAt": { "$date": "2026-02-05T09:30:00.000Z" },
-    "createdAt": { "$date": "2026-01-27T08:00:00.000Z" }
+    "paidAt": {
+      "$date": "2026-02-26T10:05:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-02-26T10:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000303" },
-    "borrowRecordId": { "$oid": "660000000000000000000206" },
-    "userId": { "$oid": "660000000000000000000005" },
+    "_id": {
+      "$oid": "00000000000000000000012e"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000d2"
+    },
+    "userId": {
+      "$oid": "00000000000000000000000e"
+    },
+    "amount": 15000,
+    "reason": "Quá hạn 3 ngày sách Hands-On Machine Learning",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-03-01T14:20:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-03-01T14:15:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000012f"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000d7"
+    },
+    "userId": {
+      "$oid": "000000000000000000000013"
+    },
+    "amount": 25000,
+    "reason": "Quá hạn 5 ngày sách English Grammar in Use",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-03-24T10:35:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-03-24T10:30:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000130"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000e9"
+    },
+    "userId": {
+      "$oid": "000000000000000000000016"
+    },
+    "amount": 180000,
+    "reason": "Bồi thường mất sách Building Microservices",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-09-02T14:10:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-02T14:05:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000131"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000ea"
+    },
+    "userId": {
+      "$oid": "000000000000000000000017"
+    },
     "amount": 120000,
-    "reason": "Bồi thường mất sách Đắc Nhân Tâm",
+    "reason": "Bồi thường mất sách Zero to One",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-09-05T09:20:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-05T09:15:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000132"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000c9"
+    },
+    "userId": {
+      "$oid": "000000000000000000000005"
+    },
+    "amount": 20000,
+    "reason": "Phạt làm bẩn góc bìa sách",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-01-22T15:35:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-01-22T15:30:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000133"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000cf"
+    },
+    "userId": {
+      "$oid": "00000000000000000000000b"
+    },
+    "amount": 15000,
+    "reason": "Làm quăn gập nhiều trang sách Lược Sử Thời Gian",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-02-14T15:05:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-02-14T15:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000134"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000cc"
+    },
+    "userId": {
+      "$oid": "000000000000000000000008"
+    },
+    "amount": 30000,
+    "reason": "Phí xử lý nhầm hạn trả tài liệu",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-01-30T09:45:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-01-30T09:40:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000135"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000d3"
+    },
+    "userId": {
+      "$oid": "00000000000000000000000f"
+    },
+    "amount": 10000,
+    "reason": "Trả trễ 2 ngày đợt trước",
+    "status": "Paid",
+    "paidAt": {
+      "$date": "2026-02-28T11:25:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-02-28T11:20:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000136"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000e2"
+    },
+    "userId": {
+      "$oid": "00000000000000000000000f"
+    },
+    "amount": 120000,
+    "reason": "Mượn quá hạn 24 ngày sách Clean Code (5.000đ/ngày)",
     "status": "Pending",
     "paidAt": null,
-    "createdAt": { "$date": "2026-02-02T10:00:00.000Z" }
+    "createdAt": {
+      "$date": "2026-10-10T08:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000137"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000e3"
+    },
+    "userId": {
+      "$oid": "000000000000000000000010"
+    },
+    "amount": 95000,
+    "reason": "Mượn quá hạn 19 ngày sách Refactoring (5.000đ/ngày)",
+    "status": "Pending",
+    "paidAt": null,
+    "createdAt": {
+      "$date": "2026-10-15T08:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000138"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000e4"
+    },
+    "userId": {
+      "$oid": "000000000000000000000011"
+    },
+    "amount": 70000,
+    "reason": "Mượn quá hạn 14 ngày sách Deep Learning (5.000đ/ngày)",
+    "status": "Pending",
+    "paidAt": null,
+    "createdAt": {
+      "$date": "2026-10-16T08:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000139"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000e5"
+    },
+    "userId": {
+      "$oid": "000000000000000000000012"
+    },
+    "amount": 40000,
+    "reason": "Mượn quá hạn 8 ngày sách Computer Networking",
+    "status": "Pending",
+    "paidAt": null,
+    "createdAt": {
+      "$date": "2026-10-20T08:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000013a"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000e6"
+    },
+    "userId": {
+      "$oid": "000000000000000000000013"
+    },
+    "amount": 35000,
+    "reason": "Mượn quá hạn 7 ngày sách Tinh Thần Khởi Nghiệp Tinh Gọn",
+    "status": "Pending",
+    "paidAt": null,
+    "createdAt": {
+      "$date": "2026-10-21T08:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000013b"
+    },
+    "borrowRecordId": {
+      "$oid": "0000000000000000000000eb"
+    },
+    "userId": {
+      "$oid": "000000000000000000000018"
+    },
+    "amount": 150000,
+    "reason": "Bồi thường sách Số Đỏ bị làm hỏng rách nát",
+    "status": "Pending",
+    "paidAt": null,
+    "createdAt": {
+      "$date": "2026-09-20T16:25:00.000Z"
+    }
   }
 ]

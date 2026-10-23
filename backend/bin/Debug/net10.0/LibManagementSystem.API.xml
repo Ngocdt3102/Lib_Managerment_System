@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibManagementSystem.API</name>
+    </assembly>
+    <members>
+        <member name="T:LibManagementSystem.API.Controllers.AuthController">
+            <summary>
+            Quản lý xác thực và phân quyền người dùng (Đăng ký, Đăng nhập, Thông tin cá nhân)
+            </summary>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.AuthController.Register(LibManagementSystem.API.DTOs.RegisterDto)">
+            <summary>
+            Đăng ký tài khoản độc giả mới
+            </summary>
+            <param name="dto">Thông tin đăng ký (Tên người dùng, Email, Mật khẩu, Họ tên)</param>
+            <response code="200">Đăng ký thành công và trả về token JWT</response>
+            <response code="400">Dữ liệu không hợp lệ hoặc email/username đã tồn tại</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.AuthController.Login(LibManagementSystem.API.DTOs.LoginDto)">
+            <summary>
+            Đăng nhập hệ thống để nhận Token xác thực JWT
+            </summary>
+            <param name="dto">Thông tin đăng nhập (Username và Password)</param>
+            <response code="200">Đăng nhập thành công, trả về JWT Token và thông tin User</response>
+            <response code="401">Tài khoản hoặc mật khẩu không chính xác</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.AuthController.GetMe">
+            <summary>
+            Lấy thông tin tài khoản hiện tại đang đăng nhập
+            </summary>
+            <remarks>Yêu cầu Header Authorization: Bearer {token}</remarks>
+            <response code="200">Lấy thông tin tài khoản thành công</response>
+            <response code="401">Chưa xác thực hoặc token hết hạn</response>
+        </member>
+        <member name="T:LibManagementSystem.API.Controllers.BooksController">
+            <summary>
+            Quản lý danh mục sách và tìm kiếm sách trong thư viện
+            </summary>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BooksController.GetBooks(LibManagementSystem.API.DTOs.BookQueryDto)">
+            <summary>
+            Lấy danh sách sách có hỗ trợ tìm kiếm, lọc theo thể loại và phân trang
+            </summary>
+            <param name="query">Tham số tìm kiếm (Search, CategoryId, Page, PageSize)</param>
+            <response code="200">Danh sách sách kèm thông tin phân trang</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BooksController.GetBookById(System.String)">
+            <summary>
+            Lấy chi tiết thông tin cuốn sách theo mã ID
+            </summary>
+            <param name="id">Mã ID của sách</param>
+            <response code="200">Chi tiết cuốn sách</response>
+            <response code="404">Không tìm thấy sách với mã ID cung cấp</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BooksController.CreateBook(LibManagementSystem.API.DTOs.CreateBookDto)">
+            <summary>
+            Thêm một cuốn sách mới vào hệ thống
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="dto">Dữ liệu tạo sách mới</param>
+            <response code="201">Tạo sách thành công</response>
+            <response code="400">Dữ liệu không hợp lệ hoặc ISBN đã tồn tại</response>
+            <response code="401">Chưa xác thực</response>
+            <response code="403">Không có quyền truy cập</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BooksController.UpdateBook(System.String,LibManagementSystem.API.DTOs.UpdateBookDto)">
+            <summary>
+            Cập nhật thông tin cuốn sách theo mã ID
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="id">Mã ID của sách cần cập nhật</param>
+            <param name="dto">Dữ liệu cập nhật sách</param>
+            <response code="200">Cập nhật thành công</response>
+            <response code="400">Dữ liệu không hợp lệ hoặc không tìm thấy sách</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BooksController.DeleteBook(System.String)">
+            <summary>
+            Xóa cuốn sách khỏi hệ thống theo mã ID
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="id">Mã ID của sách cần xóa</param>
+            <response code="200">Xóa sách thành công</response>
+            <response code="400">Không thể xóa sách do đang được mượn hoặc không tồn tại</response>
+        </member>
+        <member name="T:LibManagementSystem.API.Controllers.BorrowsController">
+            <summary>
+            Quản lý quy trình mượn - trả và gia hạn sách
+            </summary>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BorrowsController.CreateBorrow(LibManagementSystem.API.DTOs.CreateBorrowDto)">
+            <summary>
+            Tạo phiếu mượn sách mới cho độc giả
+            </summary>
+            <param name="dto">Thông tin đăng ký mượn sách (BookId, LoanDays, Note)</param>
+            <response code="200">Mượn sách thành công</response>
+            <response code="400">Sách đã hết bản sao có sẵn hoặc tài khoản vượt quá giới hạn mượn</response>
+            <response code="401">Chưa xác thực</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BorrowsController.ReturnBook(System.String,LibManagementSystem.API.DTOs.ReturnBookDto)">
+            <summary>
+            Xác nhận trả sách, cập nhật tình trạng sách và tính tiền phạt nếu quá hạn
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="id">Mã ID của phiếu mượn</param>
+            <param name="dto">Thông tin trả sách (Tình trạng sách, ghi chú)</param>
+            <response code="200">Trả sách thành công</response>
+            <response code="400">Phiếu mượn không tồn tại hoặc sách đã được trả trước đó</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BorrowsController.GetMyLoans">
+            <summary>
+            Lấy lịch sử mượn sách của chính tài khoản đang đăng nhập
+            </summary>
+            <response code="200">Danh sách các phiếu mượn của cá nhân</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BorrowsController.GetAllLoans(System.String)">
+            <summary>
+            Lấy toàn bộ danh sách phiếu mượn trong hệ thống (có thể lọc theo trạng thái)
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="status">Trạng thái phiếu mượn (BORROWED, RETURNED, OVERDUE...)</param>
+            <response code="200">Danh sách phiếu mượn</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.BorrowsController.ExtendLoan(System.String,System.Int32)">
+            <summary>
+            Gia hạn ngày trả sách cho phiếu mượn
+            </summary>
+            <param name="id">Mã ID phiếu mượn</param>
+            <param name="days">Số ngày muốn gia hạn (mặc định 7 ngày)</param>
+            <response code="200">Gia hạn thành công</response>
+            <response code="400">Không thể gia hạn (phiếu đã quá hạn, đã trả, hoặc vượt số lần tối đa)</response>
+        </member>
+        <member name="T:LibManagementSystem.API.Controllers.CategoriesController">
+            <summary>
+            Quản lý thể loại sách trong hệ thống thư viện
+            </summary>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.CategoriesController.GetAll">
+            <summary>
+            Lấy toàn bộ danh sách các thể loại sách
+            </summary>
+            <response code="200">Danh sách thể loại</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.CategoriesController.GetById(System.String)">
+            <summary>
+            Lấy chi tiết thể loại theo mã ID
+            </summary>
+            <param name="id">Mã ID của thể loại</param>
+            <response code="200">Chi tiết thể loại</response>
+            <response code="404">Không tìm thấy thể loại</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.CategoriesController.Create(LibManagementSystem.API.DTOs.CreateCategoryDto)">
+            <summary>
+            Thêm một thể loại sách mới
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="dto">Thông tin thể loại mới</param>
+            <response code="201">Tạo thể loại thành công</response>
+            <response code="400">Dữ liệu không hợp lệ hoặc tên thể loại đã tồn tại</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.CategoriesController.Update(System.String,LibManagementSystem.API.DTOs.UpdateCategoryDto)">
+            <summary>
+            Cập nhật thông tin thể loại sách
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="id">Mã ID của thể loại</param>
+            <param name="dto">Thông tin cập nhật</param>
+            <response code="200">Cập nhật thành công</response>
+            <response code="400">Dữ liệu không hợp lệ hoặc không tìm thấy thể loại</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.CategoriesController.Delete(System.String)">
+            <summary>
+            Xóa thể loại sách theo mã ID
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="id">Mã ID của thể loại cần xóa</param>
+            <response code="200">Xóa thể loại thành công</response>
+            <response code="400">Không thể xóa thể loại (đang có sách thuộc thể loại này)</response>
+        </member>
+        <member name="T:LibManagementSystem.API.Controllers.FinesController">
+            <summary>
+            Quản lý phí phạt mượn sách quá hạn hoặc làm hỏng/mất sách
+            </summary>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.FinesController.GetAllFines(System.String)">
+            <summary>
+            Lấy toàn bộ danh sách phiếu phạt trong hệ thống (có thể lọc theo trạng thái)
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="status">Trạng thái phiếu phạt (PENDING, PAID, WAIVED...)</param>
+            <response code="200">Danh sách phiếu phạt</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.FinesController.GetMyFines">
+            <summary>
+            Lấy danh sách các khoản phạt của chính tài khoản đang đăng nhập
+            </summary>
+            <response code="200">Danh sách phiếu phạt cá nhân</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.FinesController.PayFine(System.String)">
+            <summary>
+            Xác nhận đã thu tiền phạt và chuyển trạng thái phiếu phạt sang đã thanh toán
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <param name="id">Mã ID phiếu phạt</param>
+            <response code="200">Thanh toán tiền phạt thành công</response>
+            <response code="400">Không tìm thấy phiếu phạt hoặc phiếu đã được thanh toán trước đó</response>
+        </member>
+        <member name="T:LibManagementSystem.API.Controllers.StatsController">
+            <summary>
+            Thống kê và báo cáo tổng quan dữ liệu thư viện
+            </summary>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.StatsController.GetOverview">
+            <summary>
+            Lấy số liệu thống kê tổng quan (tổng đầu sách, số sách đang mượn, quá hạn, tổng tiền phạt)
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <response code="200">Dữ liệu thống kê tổng quan</response>
+        </member>
+        <member name="T:LibManagementSystem.API.Controllers.UsersController">
+            <summary>
+            Quản lý người dùng, độc giả và phân quyền tài khoản
+            </summary>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.UsersController.GetAllUsers">
+            <summary>
+            Lấy toàn bộ danh sách người dùng trong hệ thống
+            </summary>
+            <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+            <response code="200">Danh sách người dùng</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.UsersController.GetUserById(System.String)">
+            <summary>
+            Lấy thông tin chi tiết một người dùng theo mã ID
+            </summary>
+            <param name="id">Mã ID của người dùng</param>
+            <response code="200">Thông tin người dùng</response>
+            <response code="404">Không tìm thấy người dùng</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.UsersController.UpdateUser(System.String,LibManagementSystem.API.DTOs.UpdateUserDto)">
+            <summary>
+            Cập nhật thông tin tài khoản người dùng
+            </summary>
+            <param name="id">Mã ID của người dùng cần cập nhật</param>
+            <param name="dto">Thông tin cập nhật (Họ tên, Số điện thoại, Vai trò...)</param>
+            <response code="200">Cập nhật thành công</response>
+            <response code="400">Dữ liệu không hợp lệ hoặc không tìm thấy người dùng</response>
+        </member>
+        <member name="M:LibManagementSystem.API.Controllers.UsersController.DeleteUser(System.String)">
+            <summary>
+            Xóa tài khoản người dùng khỏi hệ thống
+            </summary>
+            <remarks>Chỉ dành riêng cho tài khoản Quản trị viên (Admin)</remarks>
+            <param name="id">Mã ID của người dùng cần xóa</param>
+            <response code="200">Xóa người dùng thành công</response>
+            <response code="400">Không tìm thấy hoặc không thể xóa tài khoản</response>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type)">
+            <summary>
+            Generates a documentation comment ID for a type.
+            Example: T:Namespace.Outer+Inner`1 becomes T:Namespace.Outer.Inner`1
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.PropertyInfo)">
+            <summary>
+            Generates a documentation comment ID for a property.
+            Example: P:Namespace.ContainingType.PropertyName or for an indexer P:Namespace.ContainingType.Item(System.Int32)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type,System.String)">
+            <summary>
+            Generates a documentation comment ID for a property given its container type and property name.
+            Example: P:Namespace.ContainingType.PropertyName
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.MethodInfo)">
+            <summary>
+            Generates a documentation comment ID for a method (or constructor).
+            For example:
+              M:Namespace.ContainingType.MethodName(ParamType1,ParamType2)~ReturnType
+              M:Namespace.ContainingType.#ctor(ParamType)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.GetTypeDocId(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Generates a documentation ID string for a type.
+            This method handles nested types (replacing '+' with '.'),
+            generic types, arrays, pointers, by-ref types, and generic parameters.
+            The <paramref name="includeGenericArguments"/> flag controls whether
+            constructed generic type arguments are emitted, while <paramref name="omitGenericArity"/>
+            controls whether the generic arity marker (e.g. "`1") is appended.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.NormalizeDocId(System.String)">
+            <summary>
+            Normalizes a documentation comment ID to match the compiler-style format.
+            Strips the return type suffix for ordinary methods but retains it for conversion operators.
+            </summary>
+            <param name="docId">The documentation comment ID to normalize.</param>
+            <returns>The normalized documentation comment ID.</returns>
+        </member>
+    </members>
+</doc>
