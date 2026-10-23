@@ -1,162 +1,962 @@
 [
   {
-    "_id": { "$oid": "660000000000000000000101" },
+    "_id": {
+      "$oid": "000000000000000000000065"
+    },
     "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
     "author": "Robert C. Martin",
     "isbn": "9780132350884",
-    "categoryId": { "$oid": "660000000000000000000010" },
+    "categoryId": {
+      "$oid": "00000000000000000000000a"
+    },
     "publisher": "Prentice Hall",
     "publishYear": 2008,
-    "totalCopies": 5,
-    "availableCopies": 3,
+    "totalCopies": 6,
+    "availableCopies": 5,
     "location": "Kệ A1-01",
     "coverImageUrl": "https://m.media-amazon.com/images/I/41xShLch03L._SX376_BO1,204,203,200_.jpg",
-    "description": "Cuốn sách kinh điển về nguyên lý viết code sạch, dễ đọc và bảo trì hệ thống phần mềm.",
-    "createdAt": { "$date": "2026-01-05T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-05T00:00:00.000Z" }
+    "description": "Quy tắc và phong cách viết mã nguồn sạch, dễ đọc và dễ mở rộng.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000102" },
+    "_id": {
+      "$oid": "000000000000000000000066"
+    },
+    "title": "The Pragmatic Programmer: Your Journey to Mastery",
+    "author": "Andrew Hunt, David Thomas",
+    "isbn": "9780135957059",
+    "categoryId": {
+      "$oid": "00000000000000000000000a"
+    },
+    "publisher": "Addison-Wesley",
+    "publishYear": 2019,
+    "totalCopies": 5,
+    "availableCopies": 4,
+    "location": "Kệ A1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/51W1sBPO7tL._SX380_BO1,204,203,200_.jpg",
+    "description": "Cẩm nang toàn diện rèn luyện tư duy lập trình viên thực tế.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000067"
+    },
     "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
     "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
     "isbn": "9780201633610",
-    "categoryId": { "$oid": "660000000000000000000010" },
+    "categoryId": {
+      "$oid": "00000000000000000000000a"
+    },
     "publisher": "Addison-Wesley",
     "publishYear": 1994,
-    "totalCopies": 4,
-    "availableCopies": 2,
-    "location": "Kệ A1-02",
+    "totalCopies": 5,
+    "availableCopies": 4,
+    "location": "Kệ A1-03",
     "coverImageUrl": "https://m.media-amazon.com/images/I/51szD9HC9pL._SX395_BO1,204,203,200_.jpg",
     "description": "23 mẫu thiết kế hướng đối tượng kinh điển của nhóm Gang of Four (GoF).",
-    "createdAt": { "$date": "2026-01-05T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-05T00:00:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000103" },
+    "_id": {
+      "$oid": "000000000000000000000068"
+    },
     "title": "Refactoring: Improving the Design of Existing Code",
     "author": "Martin Fowler",
     "isbn": "9780134757599",
-    "categoryId": { "$oid": "660000000000000000000010" },
+    "categoryId": {
+      "$oid": "00000000000000000000000a"
+    },
     "publisher": "Addison-Wesley",
     "publishYear": 2018,
-    "totalCopies": 3,
+    "totalCopies": 4,
     "availableCopies": 3,
-    "location": "Kệ A1-03",
+    "location": "Kệ A1-04",
     "coverImageUrl": "https://m.media-amazon.com/images/I/41OD5ed4qRL._SX397_BO1,204,203,200_.jpg",
-    "description": "Hướng dẫn tái cấu trúc mã nguồn cũ giúp tối ưu hiệu năng và tái sử dụng code.",
-    "createdAt": { "$date": "2026-01-06T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-06T00:00:00.000Z" }
+    "description": "Kỹ thuật cải tiến cấu trúc code cũ mà không làm thay đổi chức năng.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000104" },
+    "_id": {
+      "$oid": "000000000000000000000069"
+    },
     "title": "Designing Data-Intensive Applications",
     "author": "Martin Kleppmann",
     "isbn": "9781449373320",
-    "categoryId": { "$oid": "660000000000000000000010" },
+    "categoryId": {
+      "$oid": "00000000000000000000000a"
+    },
     "publisher": "O'Reilly Media",
     "publishYear": 2017,
-    "totalCopies": 6,
-    "availableCopies": 4,
+    "totalCopies": 7,
+    "availableCopies": 7,
     "location": "Kệ A2-01",
     "coverImageUrl": "https://m.media-amazon.com/images/I/51gP9mXzgTL._SX379_BO1,204,203,200_.jpg",
-    "description": "Kiến trúc hệ thống dữ liệu lớn, Distributed Systems, NoSQL, Kafka và Database Internals.",
-    "createdAt": { "$date": "2026-01-07T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-07T00:00:00.000Z" }
+    "description": "Kiến trúc hệ thống dữ liệu lớn, Distributed Systems, NoSQL, Kafka và Storage.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000105" },
+    "_id": {
+      "$oid": "00000000000000000000006a"
+    },
+    "title": "Building Microservices: Designing Fine-Grained Systems",
+    "author": "Sam Newman",
+    "isbn": "9781492034025",
+    "categoryId": {
+      "$oid": "00000000000000000000000a"
+    },
+    "publisher": "O'Reilly Media",
+    "publishYear": 2021,
+    "totalCopies": 5,
+    "availableCopies": 5,
+    "location": "Kệ A2-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71Y+z6Y5hYL.jpg",
+    "description": "Mô hình kiến trúc Microservices, tách nhỏ hệ thống phân tán và bảo mật API.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000006b"
+    },
+    "title": "Introduction to Algorithms (CLRS)",
+    "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+    "isbn": "9780262046305",
+    "categoryId": {
+      "$oid": "00000000000000000000000b"
+    },
+    "publisher": "MIT Press",
+    "publishYear": 2022,
+    "totalCopies": 6,
+    "availableCopies": 6,
+    "location": "Kệ B1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/61k7JqswOUL.jpg",
+    "description": "Giáo trình thuật toán kinh điển thế giới với phân tích độ phức tạp chi tiết.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000006c"
+    },
+    "title": "Artificial Intelligence: A Modern Approach",
+    "author": "Stuart Russell, Peter Norvig",
+    "isbn": "9780134610993",
+    "categoryId": {
+      "$oid": "00000000000000000000000b"
+    },
+    "publisher": "Pearson",
+    "publishYear": 2020,
+    "totalCopies": 5,
+    "availableCopies": 4,
+    "location": "Kệ B1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71Yf9Sg0k7L.jpg",
+    "description": "Giáo trình AI toàn diện về tác tử thông minh, logic suy luận và học máy.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000006d"
+    },
     "title": "Deep Learning",
     "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
     "isbn": "9780262035613",
-    "categoryId": { "$oid": "660000000000000000000011" },
+    "categoryId": {
+      "$oid": "00000000000000000000000b"
+    },
     "publisher": "MIT Press",
     "publishYear": 2016,
     "totalCopies": 4,
-    "availableCopies": 2,
-    "location": "Kệ B1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/61abc123xyz._SX379_BO1,204,203,200_.jpg",
-    "description": "Giáo trình toán học và lý thuyết nền tảng về mạng nơ-ron nhân tạo và Deep Learning.",
-    "createdAt": { "$date": "2026-01-08T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-08T00:00:00.000Z" }
+    "availableCopies": 3,
+    "location": "Kệ B1-03",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/61q3kM679zL.jpg",
+    "description": "Nền tảng toán học và mạng nơ-ron sâu của ba giáo sư hàng đầu thế giới.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000106" },
-    "title": "Nhà Giả Kim (The Alchemist)",
-    "author": "Paulo Coelho",
-    "isbn": "9786045634562",
-    "categoryId": { "$oid": "660000000000000000000013" },
-    "publisher": "NXB Hội Nhà Văn",
-    "publishYear": 2020,
-    "totalCopies": 10,
-    "availableCopies": 8,
-    "location": "Kệ C1-05",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg",
-    "description": "Cuốn tiểu thuyết triết lý lừng danh thế giới về hành trình theo đuổi ước mơ của cậu bé chăn cừu Santiago.",
-    "createdAt": { "$date": "2026-01-10T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-10T00:00:00.000Z" }
+    "_id": {
+      "$oid": "00000000000000000000006e"
+    },
+    "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+    "author": "Aurélien Géron",
+    "isbn": "9781098125974",
+    "categoryId": {
+      "$oid": "00000000000000000000000b"
+    },
+    "publisher": "O'Reilly Media",
+    "publishYear": 2022,
+    "totalCopies": 6,
+    "availableCopies": 6,
+    "location": "Kệ B2-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81x9f8r2e-L.jpg",
+    "description": "Hướng dẫn thực hành xây dựng mô hình AI từ cơ bản đến nâng cao bằng Python.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000107" },
-    "title": "Đắc Nhân Tâm (How to Win Friends and Influence People)",
-    "author": "Dale Carnegie",
-    "isbn": "9786045876543",
-    "categoryId": { "$oid": "660000000000000000000014" },
-    "publisher": "NXB Tổng Hợp TPHCM",
+    "_id": {
+      "$oid": "00000000000000000000006f"
+    },
+    "title": "Pattern Recognition and Machine Learning",
+    "author": "Christopher M. Bishop",
+    "isbn": "9780387310732",
+    "categoryId": {
+      "$oid": "00000000000000000000000b"
+    },
+    "publisher": "Springer",
+    "publishYear": 2006,
+    "totalCopies": 3,
+    "availableCopies": 3,
+    "location": "Kệ B2-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/61G+Tq9n8xL.jpg",
+    "description": "Lý thuyết xác suất Bayes và nhận dạng mẫu chuyên sâu cho nghiên cứu sinh.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000070"
+    },
+    "title": "The Web Application Hacker's Handbook",
+    "author": "Dafydd Stuttard, Marcus Pinto",
+    "isbn": "9781118026472",
+    "categoryId": {
+      "$oid": "00000000000000000000000c"
+    },
+    "publisher": "Wiley",
+    "publishYear": 2011,
+    "totalCopies": 4,
+    "availableCopies": 3,
+    "location": "Kệ C1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/51wXpQJq0pL.jpg",
+    "description": "Bí quyết tìm kiếm và khai thác lỗ hổng bảo mật ứng dụng Web thực chiến.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000071"
+    },
+    "title": "Computer Networking: A Top-Down Approach",
+    "author": "James Kurose, Keith Ross",
+    "isbn": "9780136681557",
+    "categoryId": {
+      "$oid": "00000000000000000000000c"
+    },
+    "publisher": "Pearson",
     "publishYear": 2021,
-    "totalCopies": 8,
+    "totalCopies": 6,
     "availableCopies": 5,
-    "location": "Kệ D1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71vK0WVQ4rL.jpg",
-    "description": "Nghệ thuật thu phục lòng người và ứng xử trong công việc cũng như cuộc sống hằng ngày.",
-    "createdAt": { "$date": "2026-01-11T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-11T00:00:00.000Z" }
+    "location": "Kệ C1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71YkL7R4jIL.jpg",
+    "description": "Mạng máy tính theo cách tiếp cận từ tầng ứng dụng xuống tầng vật lý.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000108" },
+    "_id": {
+      "$oid": "000000000000000000000072"
+    },
+    "title": "Linux Bible (10th Edition)",
+    "author": "Christopher Negus",
+    "isbn": "9781119578888",
+    "categoryId": {
+      "$oid": "00000000000000000000000c"
+    },
+    "publisher": "Wiley",
+    "publishYear": 2020,
+    "totalCopies": 5,
+    "availableCopies": 5,
+    "location": "Kệ C1-03",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71b2Sg9rV1L.jpg",
+    "description": "Cẩm nang toàn diện quản trị hệ thống Linux từ dòng lệnh đến dịch vụ mạng.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000073"
+    },
+    "title": "CompTIA Security+ All-in-One Exam Guide",
+    "author": "Wm. Arthur Conklin, Gregory White",
+    "isbn": "9781260464009",
+    "categoryId": {
+      "$oid": "00000000000000000000000c"
+    },
+    "publisher": "McGraw-Hill",
+    "publishYear": 2021,
+    "totalCopies": 4,
+    "availableCopies": 4,
+    "location": "Kệ C2-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81xTq5eG7wL.jpg",
+    "description": "Giáo trình chuẩn quốc tế về bảo mật thông tin và an ninh mạng.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000074"
+    },
+    "title": "Kinh Tế Học Hài Hước (Freakonomics)",
+    "author": "Steven D. Levitt, Stephen J. Dubner",
+    "isbn": "9780060731335",
+    "categoryId": {
+      "$oid": "00000000000000000000000d"
+    },
+    "publisher": "Morrow",
+    "publishYear": 2005,
+    "totalCopies": 8,
+    "availableCopies": 8,
+    "location": "Kệ D1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71o0Tf2h3fL.jpg",
+    "description": "Khám phá góc nhìn ẩn giấu thú vị đằng sau mọi hiện tượng kinh tế đời thường.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000075"
+    },
+    "title": "Từ Tốt Đến Vĩ Đại (Good to Great)",
+    "author": "Jim Collins",
+    "isbn": "9780066620992",
+    "categoryId": {
+      "$oid": "00000000000000000000000d"
+    },
+    "publisher": "HarperBusiness",
+    "publishYear": 2001,
+    "totalCopies": 7,
+    "availableCopies": 6,
+    "location": "Kệ D1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/61I24fJkG4L.jpg",
+    "description": "Tại sao một số công ty tạo nên bước nhảy vọt còn các công ty khác thì không.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000076"
+    },
+    "title": "Tinh Thần Khởi Nghiệp Tinh Gọn (The Lean Startup)",
+    "author": "Eric Ries",
+    "isbn": "9780307887894",
+    "categoryId": {
+      "$oid": "00000000000000000000000d"
+    },
+    "publisher": "Crown Business",
+    "publishYear": 2011,
+    "totalCopies": 6,
+    "availableCopies": 5,
+    "location": "Kệ D1-03",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81vvgZqCskL.jpg",
+    "description": "Phương pháp xây dựng sản phẩm và thử nghiệm thị trường nhanh chóng với chi phí tối thiểu.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000077"
+    },
+    "title": "Không Đến Một (Zero to One)",
+    "author": "Peter Thiel, Blake Masters",
+    "isbn": "9780804139298",
+    "categoryId": {
+      "$oid": "00000000000000000000000d"
+    },
+    "publisher": "Crown Business",
+    "publishYear": 2014,
+    "totalCopies": 8,
+    "availableCopies": 8,
+    "location": "Kệ D2-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71m-MxdJ2WL.jpg",
+    "description": "Bí quyết xây dựng startup tạo ra giá trị mới mang tính độc quyền sáng tạo.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000078"
+    },
+    "title": "Nhà Đầu Tư Thông Minh (The Intelligent Investor)",
+    "author": "Benjamin Graham",
+    "isbn": "9780060555665",
+    "categoryId": {
+      "$oid": "00000000000000000000000e"
+    },
+    "publisher": "Harper Business",
+    "publishYear": 2006,
+    "totalCopies": 9,
+    "availableCopies": 9,
+    "location": "Kệ E1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/919mmNCTaaL.jpg",
+    "description": "Cuốn sách gối đầu giường về đầu tư giá trị của người thầy của Warren Buffett.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000079"
+    },
     "title": "Dạy Con Làm Giàu - Tập 1 (Rich Dad Poor Dad)",
     "author": "Robert T. Kiyosaki",
     "isbn": "9786048432109",
-    "categoryId": { "$oid": "660000000000000000000012" },
+    "categoryId": {
+      "$oid": "00000000000000000000000e"
+    },
     "publisher": "NXB Trẻ",
     "publishYear": 2019,
-    "totalCopies": 7,
-    "availableCopies": 6,
-    "location": "Kệ E1-03",
+    "totalCopies": 10,
+    "availableCopies": 10,
+    "location": "Kệ E1-02",
     "coverImageUrl": "https://m.media-amazon.com/images/I/81b-5OXA5jL.jpg",
-    "description": "Bài học tư duy tài chính gia đình, phân biệt giữa Tài sản và Tiêu sản.",
-    "createdAt": { "$date": "2026-01-12T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-12T00:00:00.000Z" }
+    "description": "Tư duy tài chính căn bản, phân biệt giữa tài sản sinh lời và tiêu sản.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000109" },
+    "_id": {
+      "$oid": "00000000000000000000007a"
+    },
+    "title": "Tâm Lý Học Về Tiền (The Psychology of Money)",
+    "author": "Morgan Housel",
+    "isbn": "9780857197689",
+    "categoryId": {
+      "$oid": "00000000000000000000000e"
+    },
+    "publisher": "Harriman House",
+    "publishYear": 2020,
+    "totalCopies": 8,
+    "availableCopies": 7,
+    "location": "Kệ E1-03",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71TRUbzcvaL.jpg",
+    "description": "Những bài học vĩnh cửu về sự giàu có, lòng tham và hạnh phúc tài chính.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000007b"
+    },
+    "title": "Bước Đi Ngẫu Nhiên Trên Phố Wall",
+    "author": "Burton G. Malkiel",
+    "isbn": "9780393358384",
+    "categoryId": {
+      "$oid": "00000000000000000000000e"
+    },
+    "publisher": "W. W. Norton",
+    "publishYear": 2019,
+    "totalCopies": 5,
+    "availableCopies": 5,
+    "location": "Kệ E2-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71sE13yP3rL.jpg",
+    "description": "Chiến lược đầu tư chỉ số dài hạn và lý thuyết thị trường hiệu quả.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000007c"
+    },
+    "title": "Đắc Nhân Tâm (How to Win Friends and Influence People)",
+    "author": "Dale Carnegie",
+    "isbn": "9786045876543",
+    "categoryId": {
+      "$oid": "00000000000000000000000f"
+    },
+    "publisher": "NXB Tổng Hợp TPHCM",
+    "publishYear": 2021,
+    "totalCopies": 12,
+    "availableCopies": 12,
+    "location": "Kệ F1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71vK0WVQ4rL.jpg",
+    "description": "Nghệ thuật thu phục lòng người và xây dựng mối quan hệ chân thành.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000007d"
+    },
+    "title": "Thói Quen Nguyên Tử (Atomic Habits)",
+    "author": "James Clear",
+    "isbn": "9780735211292",
+    "categoryId": {
+      "$oid": "00000000000000000000000f"
+    },
+    "publisher": "Avery",
+    "publishYear": 2018,
+    "totalCopies": 10,
+    "availableCopies": 10,
+    "location": "Kệ F1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81wgcld4wxL.jpg",
+    "description": "Cách thay đổi thói quen nhỏ xíu để tạo nên kết quả phi thường.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000007e"
+    },
+    "title": "Tư Duy Nhanh Và Chậm (Thinking, Fast and Slow)",
+    "author": "Daniel Kahneman",
+    "isbn": "9780374533557",
+    "categoryId": {
+      "$oid": "00000000000000000000000f"
+    },
+    "publisher": "Farrar, Straus and Giroux",
+    "publishYear": 2011,
+    "totalCopies": 7,
+    "availableCopies": 6,
+    "location": "Kệ F1-03",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/61fdrEu02SL.jpg",
+    "description": "Hai hệ thống tư duy chi phối mọi quyết định và hành vi của con người.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000007f"
+    },
+    "title": "Nguyên Lý 80/20 (The 80/20 Principle)",
+    "author": "Richard Koch",
+    "isbn": "9780385491747",
+    "categoryId": {
+      "$oid": "00000000000000000000000f"
+    },
+    "publisher": "Currency",
+    "publishYear": 1999,
+    "totalCopies": 6,
+    "availableCopies": 5,
+    "location": "Kệ F2-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71z7Cq9l7yL.jpg",
+    "description": "Đạt được kết quả tối đa với công sức tối thiểu nhờ tập trung vào trọng điểm.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000080"
+    },
+    "title": "Nguyên Tắc Của Cuộc Sống Và Công Việc (Principles)",
+    "author": "Ray Dalio",
+    "isbn": "9781501124020",
+    "categoryId": {
+      "$oid": "00000000000000000000000f"
+    },
+    "publisher": "Simon & Schuster",
+    "publishYear": 2017,
+    "totalCopies": 6,
+    "availableCopies": 6,
+    "location": "Kệ F2-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71d1g4GqjRL.jpg",
+    "description": "Những nguyên tắc sống và làm việc thực tế của huyền thoại quỹ đầu tư Bridgewater.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000081"
+    },
+    "title": "Nhà Giả Kim (The Alchemist)",
+    "author": "Paulo Coelho",
+    "isbn": "9786045634562",
+    "categoryId": {
+      "$oid": "000000000000000000000010"
+    },
+    "publisher": "NXB Hội Nhà Văn",
+    "publishYear": 2020,
+    "totalCopies": 15,
+    "availableCopies": 15,
+    "location": "Kệ G1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg",
+    "description": "Hành trình theo đuổi vận mệnh đời mình của cậu bé chăn cừu Santiago.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000082"
+    },
+    "title": "Bố Già (The Godfather)",
+    "author": "Mario Puzo",
+    "isbn": "9780451205766",
+    "categoryId": {
+      "$oid": "000000000000000000000010"
+    },
+    "publisher": "Signet",
+    "publishYear": 2002,
+    "totalCopies": 8,
+    "availableCopies": 8,
+    "location": "Kệ G1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81A9b9iNCRL.jpg",
+    "description": "Bản hùng ca bi tráng về gia tộc Mafia Corleone và lòng trung thành.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000083"
+    },
+    "title": "Không Gia Đình (Sans Famille)",
+    "author": "Hector Malot",
+    "isbn": "9786042138971",
+    "categoryId": {
+      "$oid": "000000000000000000000010"
+    },
+    "publisher": "NXB Kim Đồng",
+    "publishYear": 2019,
+    "totalCopies": 8,
+    "availableCopies": 7,
+    "location": "Kệ G1-03",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81nQd4G8z0L.jpg",
+    "description": "Chuyến phiêu lưu đầy nghị lực của cậu bé Rémi mồ côi trên khắp nước Pháp.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000084"
+    },
+    "title": "Số Đỏ",
+    "author": "Vũ Trọng Phụng",
+    "isbn": "9786042187654",
+    "categoryId": {
+      "$oid": "000000000000000000000010"
+    },
+    "publisher": "NXB Văn Học",
+    "publishYear": 2021,
+    "totalCopies": 10,
+    "availableCopies": 10,
+    "location": "Kệ G2-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71w3J7yV7xL.jpg",
+    "description": "Kiệt tác trào phúng đỉnh cao của văn học hiện thực phê phán Việt Nam.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000085"
+    },
+    "title": "Dế Mèn Phiêu Lưu Ký",
+    "author": "Tô Hoài",
+    "isbn": "9786042109876",
+    "categoryId": {
+      "$oid": "000000000000000000000010"
+    },
+    "publisher": "NXB Kim Đồng",
+    "publishYear": 2022,
+    "totalCopies": 12,
+    "availableCopies": 12,
+    "location": "Kệ G2-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81jP4v7b1TL.jpg",
+    "description": "Tác phẩm văn học thiếu nhi bất hủ về tình bạn và khát vọng hòa bình.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000086"
+    },
     "title": "Cambridge IELTS 18 Academic Student's Book",
     "author": "Cambridge University Press",
     "isbn": "9781009318778",
-    "categoryId": { "$oid": "660000000000000000000015" },
+    "categoryId": {
+      "$oid": "000000000000000000000011"
+    },
     "publisher": "Cambridge Press",
     "publishYear": 2023,
-    "totalCopies": 5,
-    "availableCopies": 3,
-    "location": "Kệ F1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81x123ielts.jpg",
-    "description": "Bộ đề thi thử IELTS Academic chuẩn mới nhất với đáp án chi tiết và bài mẫu Band 8+.",
-    "createdAt": { "$date": "2026-01-15T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-15T00:00:00.000Z" }
+    "totalCopies": 8,
+    "availableCopies": 8,
+    "location": "Kệ H1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71yLzQ2q1jL.jpg",
+    "description": "Bộ 4 đề thi IELTS Academic sát với đề thi thực tế có audio và lời giải.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000110" },
-    "title": "Tuần Làm Việc 4 Giờ (The 4-Hour Workweek)",
-    "author": "Timothy Ferriss",
-    "isbn": "9780307465351",
-    "categoryId": { "$oid": "660000000000000000000014" },
-    "publisher": "Crown Publishing",
-    "publishYear": 2009,
-    "totalCopies": 4,
-    "availableCopies": 4,
-    "location": "Kệ D1-04",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81qWp+m13pL.jpg",
-    "description": "Bí quyết thoát khỏi nhịp sống 9-to-5, tự động hóa thu nhập và tận hưởng cuộc sống tự do.",
-    "createdAt": { "$date": "2026-01-16T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-16T00:00:00.000Z" }
+    "_id": {
+      "$oid": "000000000000000000000087"
+    },
+    "title": "English Grammar in Use (5th Edition)",
+    "author": "Raymond Murphy",
+    "isbn": "9781108457651",
+    "categoryId": {
+      "$oid": "000000000000000000000011"
+    },
+    "publisher": "Cambridge Press",
+    "publishYear": 2019,
+    "totalCopies": 10,
+    "availableCopies": 10,
+    "location": "Kệ H1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71xYF9bN2eL.jpg",
+    "description": "Cuốn sách ngữ pháp tiếng Anh tự học bán chạy nhất mọi thời đại.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000088"
+    },
+    "title": "Hackers TOEIC Listening & Reading",
+    "author": "David Cho",
+    "isbn": "9786045897654",
+    "categoryId": {
+      "$oid": "000000000000000000000011"
+    },
+    "publisher": "NXB Tổng Hợp",
+    "publishYear": 2022,
+    "totalCopies": 7,
+    "availableCopies": 6,
+    "location": "Kệ H1-03",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71k4M2b6nTL.jpg",
+    "description": "Bộ giáo trình luyện thi TOEIC mục tiêu 800+ chuẩn xu hướng đề mới.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000089"
+    },
+    "title": "Lược Sử Thời Gian (A Brief History of Time)",
+    "author": "Stephen Hawking",
+    "isbn": "9780553380163",
+    "categoryId": {
+      "$oid": "000000000000000000000012"
+    },
+    "publisher": "Bantam",
+    "publishYear": 1998,
+    "totalCopies": 7,
+    "availableCopies": 7,
+    "location": "Kệ I1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81A+sB3iWFL.jpg",
+    "description": "Khám phá bí ẩn lỗ đen, vụ nổ Big Bang và sự giãn nở của vũ trụ.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000008a"
+    },
+    "title": "Vũ Trụ Trong Vỏ Hạt Dẻ (The Universe in a Nutshell)",
+    "author": "Stephen Hawking",
+    "isbn": "9780553802023",
+    "categoryId": {
+      "$oid": "000000000000000000000012"
+    },
+    "publisher": "Bantam",
+    "publishYear": 2001,
+    "totalCopies": 6,
+    "availableCopies": 5,
+    "location": "Kệ I1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71v4B4xM4eL.jpg",
+    "description": "Lý thuyết siêu dây, màng vũ trụ và tương lai của vật lý lượng tử.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000008b"
+    },
+    "title": "Sapiens: Lược Sử Loài Người",
+    "author": "Yuval Noah Harari",
+    "isbn": "9780062316097",
+    "categoryId": {
+      "$oid": "000000000000000000000013"
+    },
+    "publisher": "Harper",
+    "publishYear": 2015,
+    "totalCopies": 11,
+    "availableCopies": 11,
+    "location": "Kệ J1-01",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg",
+    "description": "Hành trình vĩ đại của loài người từ vượn cổ đến người thống trị hành tinh.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000008c"
+    },
+    "title": "Đại Việt Sử Ký Toàn Thư",
+    "author": "Ngô Sĩ Liên",
+    "isbn": "9786045865432",
+    "categoryId": {
+      "$oid": "000000000000000000000013"
+    },
+    "publisher": "NXB Khoa Học Xã Hội",
+    "publishYear": 2020,
+    "totalCopies": 6,
+    "availableCopies": 5,
+    "location": "Kệ J1-02",
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81xV4z7y3hL.jpg",
+    "description": "Bộ quốc sử vĩ đại ghi chép lịch sử Việt Nam từ thời Hồng Bàng đến thời Hậu Lê.",
+    "createdAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T00:00:00.000Z"
+    }
   }
 ]

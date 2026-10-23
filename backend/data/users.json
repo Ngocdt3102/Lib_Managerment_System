@@ -1,6 +1,8 @@
 [
   {
-    "_id": { "$oid": "660000000000000000000001" },
+    "_id": {
+      "$oid": "000000000000000000000001"
+    },
     "username": "admin",
     "email": "admin@lib.com",
     "passwordHash": "$2a$11$q9h4zX7X2JbYvL4F/H3TeeM8mPz9pT4vW3X8y1Z0A5B6C7D8E9F0G",
@@ -8,11 +10,17 @@
     "phoneNumber": "0901234567",
     "role": "Admin",
     "isActive": true,
-    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-01T00:00:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000002" },
+    "_id": {
+      "$oid": "000000000000000000000002"
+    },
     "username": "librarian1",
     "email": "librarian1@lib.com",
     "passwordHash": "$2a$11$w8x24uK1WJ1hZ7l/7S1P5eQp/XbL5mYf1F3C4B5A6D7E8F9G0H1I2",
@@ -20,11 +28,17 @@
     "phoneNumber": "0912345678",
     "role": "Librarian",
     "isActive": true,
-    "createdAt": { "$date": "2026-01-02T08:30:00.000Z" },
-    "updatedAt": { "$date": "2026-01-02T08:30:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-02T08:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-02T08:30:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000003" },
+    "_id": {
+      "$oid": "000000000000000000000003"
+    },
     "username": "librarian2",
     "email": "librarian2@lib.com",
     "passwordHash": "$2a$11$w8x24uK1WJ1hZ7l/7S1P5eQp/XbL5mYf1F3C4B5A6D7E8F9G0H1I2",
@@ -32,55 +46,407 @@
     "phoneNumber": "0923456789",
     "role": "Librarian",
     "isActive": true,
-    "createdAt": { "$date": "2026-01-03T09:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-03T09:00:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-03T09:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T09:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000004" },
+    "_id": {
+      "$oid": "000000000000000000000004"
+    },
+    "username": "librarian3",
+    "email": "librarian3@lib.com",
+    "passwordHash": "$2a$11$w8x24uK1WJ1hZ7l/7S1P5eQp/XbL5mYf1F3C4B5A6D7E8F9G0H1I2",
+    "fullName": "Phạm Hoàng Thư Viện",
+    "phoneNumber": "0934567890",
+    "role": "Librarian",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-04T10:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-04T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000005"
+    },
     "username": "student01",
     "email": "sinhvien01@university.edu.vn",
     "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
     "fullName": "Phạm Minh Tuấn",
-    "phoneNumber": "0934567890",
+    "phoneNumber": "0941112233",
     "role": "Member",
     "isActive": true,
-    "createdAt": { "$date": "2026-01-10T10:15:00.000Z" },
-    "updatedAt": { "$date": "2026-01-10T10:15:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-10T08:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-10T08:15:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000005" },
+    "_id": {
+      "$oid": "000000000000000000000006"
+    },
     "username": "student02",
     "email": "sinhvien02@university.edu.vn",
     "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
     "fullName": "Đỗ Hoàng Nam",
-    "phoneNumber": "0945678901",
+    "phoneNumber": "0942223344",
     "role": "Member",
     "isActive": true,
-    "createdAt": { "$date": "2026-01-12T14:20:00.000Z" },
-    "updatedAt": { "$date": "2026-01-12T14:20:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-11T09:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-11T09:20:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000006" },
+    "_id": {
+      "$oid": "000000000000000000000007"
+    },
     "username": "student03",
     "email": "sinhvien03@university.edu.vn",
     "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
     "fullName": "Vũ Thị Hương",
-    "phoneNumber": "0956789012",
+    "phoneNumber": "0943334455",
     "role": "Member",
     "isActive": true,
-    "createdAt": { "$date": "2026-01-15T16:45:00.000Z" },
-    "updatedAt": { "$date": "2026-01-15T16:45:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-12T10:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-12T10:30:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000007" },
+    "_id": {
+      "$oid": "000000000000000000000008"
+    },
     "username": "student04",
     "email": "sinhvien04@university.edu.vn",
     "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
     "fullName": "Hoàng Anh Đức",
-    "phoneNumber": "0967890123",
+    "phoneNumber": "0944445566",
     "role": "Member",
     "isActive": true,
-    "createdAt": { "$date": "2026-01-18T11:00:00.000Z" },
-    "updatedAt": { "$date": "2026-01-18T11:00:00.000Z" }
+    "createdAt": {
+      "$date": "2026-01-13T14:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-13T14:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000009"
+    },
+    "username": "student05",
+    "email": "sinhvien05@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Ngô Bảo Châu",
+    "phoneNumber": "0945556677",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-14T15:10:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-14T15:10:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000a"
+    },
+    "username": "student06",
+    "email": "sinhvien06@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Bùi Thanh Trúc",
+    "phoneNumber": "0946667788",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-15T11:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-15T11:45:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000b"
+    },
+    "username": "student07",
+    "email": "sinhvien07@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Dương Quang Dũng",
+    "phoneNumber": "0947778899",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-16T16:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-16T16:20:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000c"
+    },
+    "username": "student08",
+    "email": "sinhvien08@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Đinh Thu Thảo",
+    "phoneNumber": "0948889900",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-17T08:50:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-17T08:50:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000d"
+    },
+    "username": "student09",
+    "email": "sinhvien09@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Lý Gia Hưng",
+    "phoneNumber": "0949990011",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-18T13:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-18T13:30:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000e"
+    },
+    "username": "student10",
+    "email": "sinhvien10@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Mai Phương Thúy",
+    "phoneNumber": "0950001122",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-19T14:40:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-19T14:40:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000f"
+    },
+    "username": "student11",
+    "email": "sinhvien11@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Hồ Ngọc Hà",
+    "phoneNumber": "0951112233",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-20T09:10:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-20T09:10:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000010"
+    },
+    "username": "student12",
+    "email": "sinhvien12@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Tạ Đình Phong",
+    "phoneNumber": "0952223344",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-21T10:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-21T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000011"
+    },
+    "username": "student13",
+    "email": "sinhvien13@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Võ Tấn Phát",
+    "phoneNumber": "0953334455",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-22T11:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-22T11:15:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000012"
+    },
+    "username": "student14",
+    "email": "sinhvien14@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Lâm Vĩnh Hải",
+    "phoneNumber": "0954445566",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-23T15:25:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-23T15:25:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000013"
+    },
+    "username": "student15",
+    "email": "sinhvien15@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Phan Mạnh Quỳnh",
+    "phoneNumber": "0955556677",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-24T16:35:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-24T16:35:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000014"
+    },
+    "username": "student16",
+    "email": "sinhvien16@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Chu Diệu Linh",
+    "phoneNumber": "0956667788",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-25T08:40:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-25T08:40:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000015"
+    },
+    "username": "student17",
+    "email": "sinhvien17@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Đặng Thái Sơn",
+    "phoneNumber": "0957778899",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-26T14:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-26T14:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000016"
+    },
+    "username": "student18",
+    "email": "sinhvien18@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Nghiêm Vũ Hoàng",
+    "phoneNumber": "0958889900",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-27T10:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-27T10:45:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000017"
+    },
+    "username": "student19",
+    "email": "sinhvien19@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Trịnh Thăng Bình",
+    "phoneNumber": "0959990011",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-28T13:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-28T13:20:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000018"
+    },
+    "username": "student20",
+    "email": "sinhvien20@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Nguyễn Cao Kỳ Duyên",
+    "phoneNumber": "0960001122",
+    "role": "Member",
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-01-29T15:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-29T15:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000019"
+    },
+    "username": "student21",
+    "email": "sinhvien21@university.edu.vn",
+    "passwordHash": "$2a$11$m2A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z",
+    "fullName": "Trần Đình Trọng",
+    "phoneNumber": "0961112233",
+    "role": "Member",
+    "isActive": false,
+    "createdAt": {
+      "$date": "2026-01-30T16:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-30T16:00:00.000Z"
+    }
   }
 ]

@@ -1,38 +1,102 @@
 [
   {
-    "_id": { "$oid": "660000000000000000000010" },
-    "name": "Công Nghệ Thông Tin",
-    "description": "Sách về lập trình web, phần mềm, kiến trúc hệ thống, cơ sở dữ liệu và DevOps.",
-    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+    "_id": {
+      "$oid": "00000000000000000000000a"
+    },
+    "name": "Công Nghệ Thông Tin & Lập Trình",
+    "description": "Sách về lập trình web, phát triển phần mềm, kiến trúc hệ thống, Clean Code và DevOps.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000011" },
-    "name": "Khoa Học Máy Tính & AI",
-    "description": "Sách nghiên cứu trí tuệ nhân tạo, Machine Learning, Deep Learning và thuật toán nâng cao.",
-    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+    "_id": {
+      "$oid": "00000000000000000000000b"
+    },
+    "name": "Khoa Học Máy Tính & Trí Tuệ Nhân Tạo",
+    "description": "Sách lý thuyết giải thuật, Machine Learning, Deep Learning, Data Science và Generative AI.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000012" },
+    "_id": {
+      "$oid": "00000000000000000000000c"
+    },
+    "name": "An Ninh Mạng & Hệ Thống",
+    "description": "An toàn thông tin, kiểm thử bảo mật (Penetration Testing), Quản trị Linux và Mạng máy tính.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000d"
+    },
     "name": "Kinh Tế & Quản Trị Kinh Doanh",
-    "description": "Sách quản trị doanh nghiệp, tài chính doanh nghiệp, đầu tư, marketing và khởi nghiệp.",
-    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+    "description": "Quản trị doanh nghiệp, chiến lược kinh doanh, văn hóa công ty và đổi mới sáng tạo.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000013" },
-    "name": "Văn Học & Tiểu Thuyết",
-    "description": "Các tác phẩm văn học kinh điển trong nước và thế giới, tiểu thuyết trinh thám, viễn tưởng.",
-    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+    "_id": {
+      "$oid": "00000000000000000000000e"
+    },
+    "name": "Tài Chính & Đầu Tư",
+    "description": "Quản lý tài chính cá nhân, đầu tư chứng khoán, phân tích báo cáo tài chính và bất động sản.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000014" },
+    "_id": {
+      "$oid": "00000000000000000000000f"
+    },
     "name": "Kỹ Năng Sống & Phát Triển Bản Thân",
-    "description": "Sách rèn luyện tư duy, kỹ năng giao tiếp, quản lý thời gian và phát triển bản thân.",
-    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+    "description": "Nghệ thuật giao tiếp, thói quen hiệu quả, tâm lý học ứng dụng và quản trị thời gian.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
   },
   {
-    "_id": { "$oid": "660000000000000000000015" },
-    "name": "Ngoại Ngữ & Tiếng Anh",
-    "description": "Giáo trình luyện thi IELTS, TOEIC, từ vựng và ngữ pháp tiếng Anh chuyên ngành.",
-    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" }
+    "_id": {
+      "$oid": "000000000000000000000010"
+    },
+    "name": "Văn Học Kinh Điển & Tiểu Thuyết",
+    "description": "Các danh tác văn học thế giới và văn học Việt Nam, tiểu thuyết trinh thám và viễn tưởng.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000011"
+    },
+    "name": "Ngoại Ngữ & Luyện Thi",
+    "description": "Tài liệu luyện thi chứng chỉ quốc tế IELTS, TOEIC, củng cố ngữ pháp và từ vựng chuyên ngành.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000012"
+    },
+    "name": "Khoa Học Tự Nhiên & Thiên Văn Học",
+    "description": "Khám phá vũ trụ, vật lý lượng tử, thuyết tương đối, sinh học tiến hóa và khoa học tự nhiên.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000013"
+    },
+    "name": "Lịch Sử, Triết Học & Xã Hội",
+    "description": "Lịch sử văn minh nhân loại, lịch sử Việt Nam, triết học phương Đông và phương Tây.",
+    "createdAt": {
+      "$date": "2026-01-01T00:00:00.000Z"
+    }
   }
 ]
