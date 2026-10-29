@@ -23,11 +23,20 @@ export const Login: React.FC = () => {
       const user = await login(values);
       message.success(`Xin chào ${user.fullName}! Đăng nhập thành công.`);
       
+      const defaultRoute = getDefaultRouteForRole(user.role);
       if (redirectUrl) {
-        navigate(redirectUrl, { replace: true });
+        // Kiểm tra xem role của user mới đăng nhập có quyền truy cập redirectUrl không
+        const isForbiddenAdmin = redirectUrl.startsWith('/admin') && user.role !== 'Admin';
+        const isForbiddenLibrarian = redirectUrl.startsWith('/librarian') && user.role !== 'Admin' && user.role !== 'Librarian';
+        const isForbidden403 = redirectUrl.startsWith('/403') || redirectUrl.startsWith('/login');
+
+        if (isForbiddenAdmin || isForbiddenLibrarian || isForbidden403) {
+          navigate(defaultRoute, { replace: true });
+        } else {
+          navigate(redirectUrl, { replace: true });
+        }
       } else {
-        const targetRoute = getDefaultRouteForRole(user.role);
-        navigate(targetRoute, { replace: true });
+        navigate(defaultRoute, { replace: true });
       }
     } catch (err: any) {
       setErrorMessage(err.message || 'Đăng nhập thất bại, vui lòng kiểm tra lại thông tin');
