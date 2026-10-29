@@ -14,7 +14,7 @@
     "totalCopies": 6,
     "availableCopies": 5,
     "location": "Kệ A1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/41xShLch03L._SX376_BO1,204,203,200_.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255522/lib_management/books/book_9780132350884.jpg",
     "description": "Quy tắc và phong cách viết mã nguồn sạch, dễ đọc và dễ mở rộng.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -38,7 +38,7 @@
     "totalCopies": 5,
     "availableCopies": 4,
     "location": "Kệ A1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/51W1sBPO7tL._SX380_BO1,204,203,200_.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255528/lib_management/books/book_9780135957059.jpg",
     "description": "Cẩm nang toàn diện rèn luyện tư duy lập trình viên thực tế.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -62,7 +62,7 @@
     "totalCopies": 5,
     "availableCopies": 4,
     "location": "Kệ A1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/51szD9HC9pL._SX395_BO1,204,203,200_.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255534/lib_management/books/book_9780201633610.jpg",
     "description": "23 mẫu thiết kế hướng đối tượng kinh điển của nhóm Gang of Four (GoF).",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -86,7 +86,7 @@
     "totalCopies": 4,
     "availableCopies": 3,
     "location": "Kệ A1-04",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/41OD5ed4qRL._SX397_BO1,204,203,200_.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255538/lib_management/books/book_9780134757599.jpg",
     "description": "Kỹ thuật cải tiến cấu trúc code cũ mà không làm thay đổi chức năng.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -110,7 +110,7 @@
     "totalCopies": 7,
     "availableCopies": 7,
     "location": "Kệ A2-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/51gP9mXzgTL._SX379_BO1,204,203,200_.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255543/lib_management/books/book_9781449373320.jpg",
     "description": "Kiến trúc hệ thống dữ liệu lớn, Distributed Systems, NoSQL, Kafka và Storage.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -134,7 +134,7 @@
     "totalCopies": 5,
     "availableCopies": 5,
     "location": "Kệ A2-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71Y+z6Y5hYL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255547/lib_management/books/book_9781492034025.jpg",
     "description": "Mô hình kiến trúc Microservices, tách nhỏ hệ thống phân tán và bảo mật API.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -158,7 +158,7 @@
     "totalCopies": 6,
     "availableCopies": 6,
     "location": "Kệ B1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/61k7JqswOUL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255550/lib_management/books/book_9780262046305.jpg",
     "description": "Giáo trình thuật toán kinh điển thế giới với phân tích độ phức tạp chi tiết.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -182,7 +182,7 @@
     "totalCopies": 5,
     "availableCopies": 4,
     "location": "Kệ B1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71Yf9Sg0k7L.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255553/lib_management/books/book_9780134610993.jpg",
     "description": "Giáo trình AI toàn diện về tác tử thông minh, logic suy luận và học máy.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -206,7 +206,7 @@
     "totalCopies": 4,
     "availableCopies": 3,
     "location": "Kệ B1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/61q3kM679zL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255561/lib_management/books/book_9780262035613.jpg",
     "description": "Nền tảng toán học và mạng nơ-ron sâu của ba giáo sư hàng đầu thế giới.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -230,7 +230,7 @@
     "totalCopies": 6,
     "availableCopies": 6,
     "location": "Kệ B2-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81x9f8r2e-L.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255564/lib_management/books/book_9781098125974.jpg",
     "description": "Hướng dẫn thực hành xây dựng mô hình AI từ cơ bản đến nâng cao bằng Python.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -254,7 +254,7 @@
     "totalCopies": 3,
     "availableCopies": 3,
     "location": "Kệ B2-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/61G+Tq9n8xL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255568/lib_management/books/book_9780387310732.jpg",
     "description": "Lý thuyết xác suất Bayes và nhận dạng mẫu chuyên sâu cho nghiên cứu sinh.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -278,7 +278,7 @@
     "totalCopies": 4,
     "availableCopies": 3,
     "location": "Kệ C1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/51wXpQJq0pL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255570/lib_management/books/book_9781118026472.jpg",
     "description": "Bí quyết tìm kiếm và khai thác lỗ hổng bảo mật ứng dụng Web thực chiến.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -302,7 +302,7 @@
     "totalCopies": 6,
     "availableCopies": 5,
     "location": "Kệ C1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71YkL7R4jIL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255572/lib_management/books/book_9780136681557.jpg",
     "description": "Mạng máy tính theo cách tiếp cận từ tầng ứng dụng xuống tầng vật lý.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -326,7 +326,7 @@
     "totalCopies": 5,
     "availableCopies": 5,
     "location": "Kệ C1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71b2Sg9rV1L.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255575/lib_management/books/book_9781119578888.jpg",
     "description": "Cẩm nang toàn diện quản trị hệ thống Linux từ dòng lệnh đến dịch vụ mạng.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -350,7 +350,7 @@
     "totalCopies": 4,
     "availableCopies": 4,
     "location": "Kệ C2-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81xTq5eG7wL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255579/lib_management/books/book_9781260464009.jpg",
     "description": "Giáo trình chuẩn quốc tế về bảo mật thông tin và an ninh mạng.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -374,7 +374,7 @@
     "totalCopies": 8,
     "availableCopies": 8,
     "location": "Kệ D1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71o0Tf2h3fL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255581/lib_management/books/book_9780060731335.jpg",
     "description": "Khám phá góc nhìn ẩn giấu thú vị đằng sau mọi hiện tượng kinh tế đời thường.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -398,7 +398,7 @@
     "totalCopies": 7,
     "availableCopies": 6,
     "location": "Kệ D1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/61I24fJkG4L.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255585/lib_management/books/book_9780066620992.jpg",
     "description": "Tại sao một số công ty tạo nên bước nhảy vọt còn các công ty khác thì không.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -422,7 +422,7 @@
     "totalCopies": 6,
     "availableCopies": 5,
     "location": "Kệ D1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81vvgZqCskL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255590/lib_management/books/book_9780307887894.jpg",
     "description": "Phương pháp xây dựng sản phẩm và thử nghiệm thị trường nhanh chóng với chi phí tối thiểu.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -446,7 +446,7 @@
     "totalCopies": 8,
     "availableCopies": 8,
     "location": "Kệ D2-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71m-MxdJ2WL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255594/lib_management/books/book_9780804139298.jpg",
     "description": "Bí quyết xây dựng startup tạo ra giá trị mới mang tính độc quyền sáng tạo.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -470,7 +470,7 @@
     "totalCopies": 9,
     "availableCopies": 9,
     "location": "Kệ E1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/919mmNCTaaL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255599/lib_management/books/book_9780060555665.jpg",
     "description": "Cuốn sách gối đầu giường về đầu tư giá trị của người thầy của Warren Buffett.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -494,7 +494,7 @@
     "totalCopies": 10,
     "availableCopies": 10,
     "location": "Kệ E1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81b-5OXA5jL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255602/lib_management/books/book_9786048432109.jpg",
     "description": "Tư duy tài chính căn bản, phân biệt giữa tài sản sinh lời và tiêu sản.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -518,7 +518,7 @@
     "totalCopies": 8,
     "availableCopies": 7,
     "location": "Kệ E1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71TRUbzcvaL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255604/lib_management/books/book_9780857197689.jpg",
     "description": "Những bài học vĩnh cửu về sự giàu có, lòng tham và hạnh phúc tài chính.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -542,7 +542,7 @@
     "totalCopies": 5,
     "availableCopies": 5,
     "location": "Kệ E2-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71sE13yP3rL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255609/lib_management/books/book_9780393358384.jpg",
     "description": "Chiến lược đầu tư chỉ số dài hạn và lý thuyết thị trường hiệu quả.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -566,7 +566,7 @@
     "totalCopies": 12,
     "availableCopies": 12,
     "location": "Kệ F1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71vK0WVQ4rL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255613/lib_management/books/book_9786045876543.jpg",
     "description": "Nghệ thuật thu phục lòng người và xây dựng mối quan hệ chân thành.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -590,7 +590,7 @@
     "totalCopies": 10,
     "availableCopies": 10,
     "location": "Kệ F1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81wgcld4wxL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255622/lib_management/books/book_9780735211292.jpg",
     "description": "Cách thay đổi thói quen nhỏ xíu để tạo nên kết quả phi thường.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -614,7 +614,7 @@
     "totalCopies": 7,
     "availableCopies": 6,
     "location": "Kệ F1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/61fdrEu02SL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255624/lib_management/books/book_9780374533557.jpg",
     "description": "Hai hệ thống tư duy chi phối mọi quyết định và hành vi của con người.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -638,7 +638,7 @@
     "totalCopies": 6,
     "availableCopies": 5,
     "location": "Kệ F2-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71z7Cq9l7yL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255631/lib_management/books/book_9780385491747.jpg",
     "description": "Đạt được kết quả tối đa với công sức tối thiểu nhờ tập trung vào trọng điểm.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -662,7 +662,7 @@
     "totalCopies": 6,
     "availableCopies": 6,
     "location": "Kệ F2-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71d1g4GqjRL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255636/lib_management/books/book_9781501124020.jpg",
     "description": "Những nguyên tắc sống và làm việc thực tế của huyền thoại quỹ đầu tư Bridgewater.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -686,7 +686,7 @@
     "totalCopies": 15,
     "availableCopies": 15,
     "location": "Kệ G1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255642/lib_management/books/book_9786045634562.jpg",
     "description": "Hành trình theo đuổi vận mệnh đời mình của cậu bé chăn cừu Santiago.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -710,7 +710,7 @@
     "totalCopies": 8,
     "availableCopies": 8,
     "location": "Kệ G1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81A9b9iNCRL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255648/lib_management/books/book_9780451205766.jpg",
     "description": "Bản hùng ca bi tráng về gia tộc Mafia Corleone và lòng trung thành.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -734,7 +734,7 @@
     "totalCopies": 8,
     "availableCopies": 7,
     "location": "Kệ G1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81nQd4G8z0L.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255652/lib_management/books/book_9786042138971.jpg",
     "description": "Chuyến phiêu lưu đầy nghị lực của cậu bé Rémi mồ côi trên khắp nước Pháp.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -758,7 +758,7 @@
     "totalCopies": 10,
     "availableCopies": 10,
     "location": "Kệ G2-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71w3J7yV7xL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255654/lib_management/books/book_9786042187654.jpg",
     "description": "Kiệt tác trào phúng đỉnh cao của văn học hiện thực phê phán Việt Nam.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -782,7 +782,7 @@
     "totalCopies": 12,
     "availableCopies": 12,
     "location": "Kệ G2-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81jP4v7b1TL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255658/lib_management/books/book_9786042109876.jpg",
     "description": "Tác phẩm văn học thiếu nhi bất hủ về tình bạn và khát vọng hòa bình.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -806,7 +806,7 @@
     "totalCopies": 8,
     "availableCopies": 8,
     "location": "Kệ H1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71yLzQ2q1jL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255661/lib_management/books/book_9781009318778.jpg",
     "description": "Bộ 4 đề thi IELTS Academic sát với đề thi thực tế có audio và lời giải.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -830,7 +830,7 @@
     "totalCopies": 10,
     "availableCopies": 10,
     "location": "Kệ H1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71xYF9bN2eL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255665/lib_management/books/book_9781108457651.jpg",
     "description": "Cuốn sách ngữ pháp tiếng Anh tự học bán chạy nhất mọi thời đại.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -854,7 +854,7 @@
     "totalCopies": 7,
     "availableCopies": 6,
     "location": "Kệ H1-03",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71k4M2b6nTL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255669/lib_management/books/book_9786045897654.jpg",
     "description": "Bộ giáo trình luyện thi TOEIC mục tiêu 800+ chuẩn xu hướng đề mới.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -878,7 +878,7 @@
     "totalCopies": 7,
     "availableCopies": 7,
     "location": "Kệ I1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81A+sB3iWFL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255672/lib_management/books/book_9780553380163.jpg",
     "description": "Khám phá bí ẩn lỗ đen, vụ nổ Big Bang và sự giãn nở của vũ trụ.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -902,7 +902,7 @@
     "totalCopies": 6,
     "availableCopies": 5,
     "location": "Kệ I1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/71v4B4xM4eL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255674/lib_management/books/book_9780553802023.jpg",
     "description": "Lý thuyết siêu dây, màng vũ trụ và tương lai của vật lý lượng tử.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -926,7 +926,7 @@
     "totalCopies": 11,
     "availableCopies": 11,
     "location": "Kệ J1-01",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255682/lib_management/books/book_9780062316097.jpg",
     "description": "Hành trình vĩ đại của loài người từ vượn cổ đến người thống trị hành tinh.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
@@ -950,7 +950,7 @@
     "totalCopies": 6,
     "availableCopies": 5,
     "location": "Kệ J1-02",
-    "coverImageUrl": "https://m.media-amazon.com/images/I/81xV4z7y3hL.jpg",
+    "coverImageUrl": "https://res.cloudinary.com/ohatpzye/image/upload/v1793255685/lib_management/books/book_9786045865432.jpg",
     "description": "Bộ quốc sử vĩ đại ghi chép lịch sử Việt Nam từ thời Hồng Bàng đến thời Hậu Lê.",
     "createdAt": {
       "$date": "2026-01-05T00:00:00.000Z"
