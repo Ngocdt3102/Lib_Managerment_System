@@ -357,7 +357,26 @@ export const MainLayout: React.FC = () => {
           </div>
 
           {/* Right: Role indicator badge + User profile */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+            <div
+              style={{
+                display: 'none',
+                alignItems: 'center',
+                gap: 6,
+                padding: '4px 12px',
+                background: 'rgba(16, 185, 129, 0.08)',
+                borderRadius: 20,
+                border: '1px solid rgba(16, 185, 129, 0.2)',
+                fontSize: 12,
+                fontWeight: 600,
+                color: '#059669',
+              }}
+              className="md-flex"
+            >
+              <span className="status-dot status-dot-green" style={{ margin: 0 }} />
+              <span>Hệ thống trực tuyến</span>
+            </div>
+
             <span className={`role-pill ${roleConfig.badgeClass}`}>
               {roleConfig.icon} {roleConfig.title}
             </span>

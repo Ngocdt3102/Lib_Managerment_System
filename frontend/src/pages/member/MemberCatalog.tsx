@@ -26,8 +26,6 @@ import {
   AppstoreOutlined,
   UnorderedListOutlined,
   EyeOutlined,
-  CheckCircleOutlined,
-  CloseCircleOutlined,
   EnvironmentOutlined,
   CalendarOutlined,
   UserOutlined,
@@ -37,7 +35,6 @@ import { bookService } from '../../services/bookService';
 import { categoryService } from '../../services/categoryService';
 import { borrowService } from '../../services/borrowService';
 import type { Book, Category } from '../../types';
-import { useAuth } from '../../context/AuthContext';
 import dayjs from 'dayjs';
 
 const { Title, Text, Paragraph } = Typography;
@@ -63,8 +60,6 @@ export const MemberCatalog: React.FC = () => {
   const [borrowDays, setBorrowDays] = useState(14);
   const [borrowNotes, setBorrowNotes] = useState('');
   const [borrowSubmitting, setBorrowSubmitting] = useState(false);
-
-  const { user } = useAuth();
 
   useEffect(() => {
     fetchCategories();
@@ -138,67 +133,89 @@ export const MemberCatalog: React.FC = () => {
   return (
     <div className="animate-fade-in-up">
       {/* Page Header Banner */}
-      <div
-        style={{
-          background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)',
-          borderRadius: 16,
-          padding: '28px 32px',
-          color: '#ffffff',
-          marginBottom: 24,
-          boxShadow: '0 10px 20px -5px rgba(37, 99, 235, 0.2)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 16,
-        }}
-      >
-        <div>
-          <Title level={2} style={{ color: '#ffffff', margin: 0, fontWeight: 800 }}>
-            📚 Khám Phá Kho Sách Thư Viện
-          </Title>
-          <Text style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: 14 }}>
-            Tra cứu hơn {total} đầu sách, tài liệu giáo trình và đăng ký mượn sách trực tuyến nhanh chóng.
-          </Text>
-        </div>
+      <div className="catalog-hero-banner">
+        <Row justify="space-between" align="middle" gutter={[16, 16]}>
+          <Col xs={24} md={16}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '4px 12px', background: 'rgba(37, 99, 235, 0.3)', borderRadius: 20, marginBottom: 12, border: '1px solid rgba(59, 130, 246, 0.4)' }}>
+              <span className="status-dot status-dot-green"></span>
+              <span style={{ fontSize: 12, fontWeight: 600, color: '#93c5fd', letterSpacing: '0.4px' }}>HỆ THỐNG THƯ VIỆN ĐÁM MÂY LIBSMART</span>
+            </div>
+            <Title level={2} style={{ color: '#ffffff', margin: '0 0 8px 0', fontWeight: 800, fontSize: 26 }}>
+              Khám Phá Kho Tri Thức & Mượn Sách Trực Tuyến
+            </Title>
+            <Text style={{ color: '#94a3b8', fontSize: 14, maxWidth: 600, display: 'block' }}>
+              Tra cứu nhanh hơn {total} đầu sách học thuật chất lượng cao từ CNTT, AI, An ninh mạng, Kinh tế và Đăng ký mượn ngay chỉ với 1 cú click.
+            </Text>
+          </Col>
 
-        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-          <Tag color="cyan" style={{ fontSize: 13, padding: '4px 12px', borderRadius: 20 }}>
-            Độc giả: {user?.fullName}
-          </Tag>
-        </div>
+          <Col xs={24} md={8} style={{ textAlign: 'right' }}>
+            <Space size="middle">
+              <div style={{ textAlign: 'center', background: 'rgba(255, 255, 255, 0.08)', backdropFilter: 'blur(10px)', padding: '10px 18px', borderRadius: 12, border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#38bdf8' }}>{total}</div>
+                <div style={{ fontSize: 11, color: '#94a3b8' }}>Đầu Sách</div>
+              </div>
+              <div style={{ textAlign: 'center', background: 'rgba(255, 255, 255, 0.08)', backdropFilter: 'blur(10px)', padding: '10px 18px', borderRadius: 12, border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#34d399' }}>{categories.length}</div>
+                <div style={{ fontSize: 11, color: '#94a3b8' }}>Thể Loại</div>
+              </div>
+              <div style={{ textAlign: 'center', background: 'rgba(255, 255, 255, 0.08)', backdropFilter: 'blur(10px)', padding: '10px 18px', borderRadius: 12, border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#fbbf24' }}>24/7</div>
+                <div style={{ fontSize: 11, color: '#94a3b8' }}>Trực Tuyến</div>
+              </div>
+            </Space>
+          </Col>
+        </Row>
+      </div>
+
+      {/* Interactive Category Chips Bar */}
+      <div className="category-chips-bar">
+        <button
+          className={`category-chip-btn ${selectedCategory === undefined ? 'active' : ''}`}
+          onClick={() => { setSelectedCategory(undefined); setPage(1); }}
+        >
+          ✨ Tất cả ({total})
+        </button>
+        {categories.map((c) => (
+          <button
+            key={c.id}
+            className={`category-chip-btn ${selectedCategory === c.id ? 'active' : ''}`}
+            onClick={() => { setSelectedCategory(c.id); setPage(1); }}
+          >
+            {c.name}
+          </button>
+        ))}
       </div>
 
       {/* Filter and Search Bar */}
       <Card
         style={{
-          borderRadius: 12,
+          borderRadius: 14,
           marginBottom: 24,
           border: '1px solid #e2e8f0',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
+          boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
         }}
       >
         <Row gutter={[16, 16]} align="middle" justify="space-between">
-          <Col xs={24} md={10} lg={8}>
+          <Col xs={24} md={10} lg={9}>
             <Input
               placeholder="Tìm theo Tiêu đề, Tác giả, ISBN..."
               prefix={<SearchOutlined style={{ color: '#94a3b8' }} />}
               value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
+              onChange={(e) => { setKeyword(e.target.value); setPage(1); }}
               allowClear
               size="large"
-              style={{ borderRadius: 8 }}
+              style={{ borderRadius: 10 }}
             />
           </Col>
 
           <Col xs={24} sm={12} md={7} lg={6}>
             <Select
-              placeholder="Tất cả danh mục thể loại"
+              placeholder="Lọc theo thể loại"
               value={selectedCategory}
-              onChange={(val) => setSelectedCategory(val)}
+              onChange={(val) => { setSelectedCategory(val); setPage(1); }}
               allowClear
               size="large"
-              style={{ width: '100%', borderRadius: 8 }}
+              style={{ width: '100%', borderRadius: 10 }}
             >
               {categories.map((c) => (
                 <Option key={c.id} value={c.id}>
@@ -212,7 +229,7 @@ export const MemberCatalog: React.FC = () => {
             <Checkbox
               checked={onlyAvailable}
               onChange={(e) => setOnlyAvailable(e.target.checked)}
-              style={{ fontWeight: 500 }}
+              style={{ fontWeight: 600, color: '#334155' }}
             >
               Chỉ sách còn sẵn
             </Checkbox>
@@ -242,7 +259,7 @@ export const MemberCatalog: React.FC = () => {
           <div style={{ marginTop: 16, color: '#64748b' }}>Đang tìm kiếm kho sách...</div>
         </div>
       ) : books.length === 0 ? (
-        <Card style={{ borderRadius: 12, textAlign: 'center', padding: '40px 0' }}>
+        <Card style={{ borderRadius: 14, textAlign: 'center', padding: '50px 0' }}>
           <Empty description="Không tìm thấy cuốn sách nào phù hợp với bộ lọc tìm kiếm hiện tại." />
         </Card>
       ) : viewMode === 'grid' ? (
@@ -255,7 +272,7 @@ export const MemberCatalog: React.FC = () => {
                   {/* Book Cover Image */}
                   <div className="book-card-cover-container">
                     {book.coverImageUrl ? (
-                      <img src={book.coverImageUrl} alt={book.title} className="book-card-cover" />
+                      <img src={book.coverImageUrl} alt={book.title} className="book-card-cover" loading="lazy" />
                     ) : (
                       <div style={{ textAlign: 'center', color: '#94a3b8' }}>
                         <BookOutlined style={{ fontSize: 48, color: '#cbd5e1' }} />
@@ -264,28 +281,67 @@ export const MemberCatalog: React.FC = () => {
                     )}
 
                     {/* Availability Tag overlay */}
-                    <div style={{ position: 'absolute', top: 10, right: 10 }}>
+                    <div style={{ position: 'absolute', top: 12, right: 12, zIndex: 10 }}>
                       {isAvailable ? (
-                        <Tag color="success" style={{ fontWeight: 600, borderRadius: 12, padding: '2px 8px' }}>
-                          <CheckCircleOutlined /> Còn {book.availableCopies} cuốn
-                        </Tag>
+                        <div
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.94)',
+                            backdropFilter: 'blur(8px)',
+                            padding: '4px 10px',
+                            borderRadius: 20,
+                            fontSize: 12,
+                            fontWeight: 600,
+                            color: '#059669',
+                            display: 'flex',
+                            alignItems: 'center',
+                            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)',
+                          }}
+                        >
+                          <span className="status-dot status-dot-green"></span>
+                          Còn {book.availableCopies} cuốn
+                        </div>
                       ) : (
-                        <Tag color="error" style={{ fontWeight: 600, borderRadius: 12, padding: '2px 8px' }}>
-                          <CloseCircleOutlined /> Hết sách
-                        </Tag>
+                        <div
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.94)',
+                            backdropFilter: 'blur(8px)',
+                            padding: '4px 10px',
+                            borderRadius: 20,
+                            fontSize: 12,
+                            fontWeight: 600,
+                            color: '#e11d48',
+                            display: 'flex',
+                            alignItems: 'center',
+                            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)',
+                          }}
+                        >
+                          <span className="status-dot status-dot-red"></span>
+                          Hết sách
+                        </div>
                       )}
                     </div>
 
-                    {/* Category pill */}
-                    <div style={{ position: 'absolute', bottom: 10, left: 10 }}>
-                      <Tag color="blue" style={{ borderRadius: 4, fontWeight: 500, fontSize: 11 }}>
+                    {/* Category pill on image */}
+                    <div style={{ position: 'absolute', bottom: 12, left: 12, zIndex: 10 }}>
+                      <span
+                        style={{
+                          background: 'rgba(15, 23, 42, 0.82)',
+                          backdropFilter: 'blur(6px)',
+                          color: '#ffffff',
+                          padding: '3px 10px',
+                          borderRadius: 6,
+                          fontSize: 11,
+                          fontWeight: 500,
+                          letterSpacing: '0.2px',
+                        }}
+                      >
                         {book.categoryName}
-                      </Tag>
+                      </span>
                     </div>
                   </div>
 
                   {/* Book Details */}
-                  <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                     <Tooltip title={book.title}>
                       <Title
                         level={5}
@@ -294,6 +350,7 @@ export const MemberCatalog: React.FC = () => {
                           margin: '0 0 6px',
                           fontWeight: 700,
                           fontSize: 15,
+                          lineHeight: 1.4,
                           minHeight: 42,
                           color: '#0f172a',
                         }}
@@ -302,18 +359,26 @@ export const MemberCatalog: React.FC = () => {
                       </Title>
                     </Tooltip>
 
-                    <Text style={{ fontSize: 13, color: '#64748b', marginBottom: 8, display: 'block' }}>
-                      <UserOutlined style={{ marginRight: 6 }} /> {book.author}
+                    <Text style={{ fontSize: 13, color: '#64748b', marginBottom: 10, display: 'block' }}>
+                      <UserOutlined style={{ marginRight: 6, color: '#94a3b8' }} /> {book.author}
                     </Text>
 
-                    <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 14 }}>
-                      <EnvironmentOutlined style={{ marginRight: 4, color: '#2563eb' }} />
-                      Vị trí: <strong>{book.location || 'Kho trung tâm'}</strong>
+                    <div style={{ fontSize: 12, color: '#64748b', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <EnvironmentOutlined style={{ color: '#2563eb' }} />
+                      <span>Kệ: <strong style={{ color: '#0f172a' }}>{book.location || 'Kho trung tâm'}</strong></span>
+                      <span style={{ color: '#cbd5e1' }}>•</span>
+                      <span>Năm: {book.publishYear || '2024'}</span>
                     </div>
 
-                    <div style={{ marginTop: 'auto', display: 'flex', gap: 8 }}>
+                    <div style={{ marginTop: 'auto', display: 'flex', gap: 10, paddingTop: 12, borderTop: '1px solid #f1f5f9' }}>
                       <Button
-                        style={{ flex: 1, borderRadius: 8 }}
+                        style={{
+                          flex: 1,
+                          borderRadius: 8,
+                          height: 38,
+                          fontWeight: 500,
+                          borderColor: '#e2e8f0',
+                        }}
                         icon={<EyeOutlined />}
                         onClick={() => setDetailBook(book)}
                       >
@@ -323,11 +388,13 @@ export const MemberCatalog: React.FC = () => {
                       <Button
                         type="primary"
                         style={{
-                          flex: 1,
+                          flex: 1.2,
                           borderRadius: 8,
+                          height: 38,
                           backgroundColor: isAvailable ? '#2563eb' : '#94a3b8',
                           borderColor: isAvailable ? '#2563eb' : '#94a3b8',
                           fontWeight: 600,
+                          boxShadow: isAvailable ? '0 4px 10px rgba(37, 99, 235, 0.25)' : 'none',
                         }}
                         disabled={!isAvailable}
                         icon={<ThunderboltOutlined />}

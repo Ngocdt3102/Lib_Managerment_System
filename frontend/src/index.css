@@ -24,12 +24,14 @@
   --gradient-admin: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
   --gradient-librarian: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   --gradient-member: linear-gradient(135deg, #059669 0%, #047857 100%);
-  --gradient-hero: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  --gradient-card-glow: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(15, 23, 42, 0.75) 100%);
   
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
-  --shadow-hover: 0 14px 20px -4px rgb(37 99 235 / 0.12), 0 4px 8px -2px rgb(0 0 0 / 0.06);
+  --shadow-hover: 0 16px 28px -4px rgba(37, 99, 235, 0.14), 0 6px 12px -2px rgba(0, 0, 0, 0.05);
+  --shadow-book: 0 12px 24px -6px rgba(15, 23, 42, 0.12), 0 4px 8px -4px rgba(15, 23, 42, 0.06);
 }
 
 * {
@@ -79,18 +81,14 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -115,8 +113,8 @@ body {
     transform: scale(1);
   }
   50% {
-    opacity: 0.75;
-    transform: scale(1.05);
+    opacity: 0.6;
+    transform: scale(1.15);
   }
 }
 
@@ -132,19 +130,33 @@ body {
   animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.pulse-badge {
+/* Status Indicator Dots */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+.status-dot-green {
+  background-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
   animation: pulseGlow 2s infinite ease-in-out;
 }
-
-/* Glassmorphism & Header */
-.glass-header {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+.status-dot-red {
+  background-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25);
 }
 
-/* Modern Card Lift */
+/* Glassmorphism Header */
+.glass-header {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+/* Modern Card Hover Lift */
 .hover-lift {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -153,40 +165,128 @@ body {
   box-shadow: var(--shadow-hover) !important;
 }
 
-/* Book Grid Card */
+/* Hero Catalog Banner */
+.catalog-hero-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+  border-radius: 20px;
+  padding: 32px 36px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.25);
+}
+.catalog-hero-banner::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(37, 99, 235, 0) 70%);
+  pointer-events: none;
+}
+
+/* Horizontal Category Chips */
+.category-chips-bar {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 14px 2px;
+  margin-bottom: 18px;
+  scrollbar-width: thin;
+}
+.category-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-chip-btn:hover {
+  border-color: #93c5fd;
+  color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-1px);
+}
+.category-chip-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Book Grid Card with 3D Depth */
 .book-card-item {
   background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 .book-card-item:hover {
-  transform: translateY(-4px);
-  border-color: #cbd5e1;
-  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 4px 8px -4px rgba(15, 23, 42, 0.04);
+  transform: translateY(-6px);
+  border-color: #bfdbfe;
+  box-shadow: var(--shadow-hover);
 }
+
 .book-card-cover-container {
   position: relative;
   width: 100%;
-  height: 220px;
-  background: #f1f5f9;
+  height: 240px;
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+/* Book Spine Shadow on left side of cover */
+.book-card-cover-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 12px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+/* Dark gradient overlay at bottom of cover */
+.book-card-cover-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 23, 42, 0.35) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
 .book-card-cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .book-card-item:hover .book-card-cover {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 /* Role Pills */
@@ -218,7 +318,8 @@ body {
 
 /* Table Enhancements */
 .ant-table {
-  border-radius: 8px !important;
+  border-radius: 12px !important;
+  overflow: hidden;
 }
 .ant-table-thead > tr > th {
   background: #f8fafc !important;
@@ -233,37 +334,22 @@ body {
 
 /* Stat Cards */
 .stat-widget {
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 24px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .stat-widget:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-}
-
-/* Buttons */
-.btn-modern-primary {
-  background: #2563eb;
-  border-color: #2563eb;
-  font-weight: 500;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
-  transition: all 0.2s ease;
-}
-.btn-modern-primary:hover {
-  background: #1d4ed8 !important;
-  border-color: #1d4ed8 !important;
-  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3) !important;
 }
 
 /* Quick login pill button */
 .quick-login-btn {
-  border-radius: 8px;
-  padding: 8px 12px;
+  border-radius: 10px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -280,3 +366,11 @@ body {
   color: #2563eb;
   transform: translateY(-1px);
 }
+
+@media (min-width: 768px) {
+  .md-flex {
+    display: flex !important;
+  }
+}
+
+
