@@ -123,8 +123,8 @@ namespace LibManagementSystem.API.Services
 
             await _context.BorrowRecords.ReplaceOneAsync(r => r.Id == borrowRecordId, record);
 
-            // Tạo phiếu phạt nếu quá hạn hoặc sách bị hỏng/mất
-            decimal totalFine = overdueFineAmount + (dto.IsDamagedOrLost ? dto.PenaltyAmount : 0m);
+            // Tạo phiếu phạt nếu quá hạn hoặc có mức phạt vi phạm (PenaltyAmount > 0)
+            decimal totalFine = overdueFineAmount + (dto.PenaltyAmount > 0 ? dto.PenaltyAmount : 0m);
             if (totalFine > 0)
             {
                 // Kiểm tra xem đã có phiếu phạt cho phiếu mượn này chưa
@@ -132,9 +132,10 @@ namespace LibManagementSystem.API.Services
                 if (existingFine == null)
                 {
                     string reason = overdueDays > 0 ? $"Quá hạn {overdueDays} ngày ({overdueFineAmount:N0} VNĐ)" : "";
-                    if (dto.IsDamagedOrLost)
+                    if (dto.PenaltyAmount > 0)
                     {
-                        reason += string.IsNullOrWhiteSpace(reason) ? dto.PenaltyReason : $" + {dto.PenaltyReason}";
+                        string pReason = string.IsNullOrWhiteSpace(dto.PenaltyReason) ? "Phạt vi phạm quy chế mượn sách" : dto.PenaltyReason;
+                        reason += string.IsNullOrWhiteSpace(reason) ? pReason : $" + {pReason}";
                     }
 
                     var fine = new Fine
