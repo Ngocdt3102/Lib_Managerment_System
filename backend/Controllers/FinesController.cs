@@ -55,15 +55,18 @@ namespace LibManagementSystem.API.Controllers
         /// <summary>
         /// Xác nhận đã thu tiền phạt và chuyển trạng thái phiếu phạt sang đã thanh toán
         /// </summary>
-        /// <remarks>Chỉ dành cho tài khoản Admin hoặc Thủ thư</remarks>
+        /// <remarks>Dành cho Admin, Thủ thư thu tiền hoặc chính Độc giả nộp phạt</remarks>
         /// <param name="id">Mã ID phiếu phạt</param>
         /// <response code="200">Thanh toán tiền phạt thành công</response>
         /// <response code="400">Không tìm thấy phiếu phạt hoặc phiếu đã được thanh toán trước đó</response>
         [HttpPut("{id}/pay")]
-        [Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Librarian}")]
         public async Task<IActionResult> PayFine(string id)
         {
-            var result = await _fineService.PayFineAsync(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var role = User.FindFirstValue(ClaimTypes.Role);
+            bool isStaff = role == UserRoles.Admin || role == UserRoles.Librarian;
+
+            var result = await _fineService.PayFineAsync(id, userId, isStaff);
             if (!result.Success)
             {
                 return BadRequest(result);

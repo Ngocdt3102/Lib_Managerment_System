@@ -34,7 +34,7 @@ namespace LibManagementSystem.API.Services
             var bookIds = records.Select(r => r.BookId).Distinct().ToList();
             var books = await _context.Books.Find(b => bookIds.Contains(b.Id!)).ToListAsync();
             var bookDict = books.ToDictionary(b => b.Id!, b => b);
-            var recordBookDict = records.ToDictionary(r => r.Id!, r => bookDict.TryGetValue(r.BookId, out var b) ? b?.Title : "N/A");
+            var recordBookDict = records.Where(r => r.Id != null).GroupBy(r => r.Id!).ToDictionary(g => g.Key, g => bookDict.TryGetValue(g.First().BookId, out var b) ? b?.Title : "N/A");
 
             var dtos = fines.Select(f => new FineDto
             {
@@ -64,7 +64,7 @@ namespace LibManagementSystem.API.Services
             var bookIds = records.Select(r => r.BookId).Distinct().ToList();
             var books = await _context.Books.Find(b => bookIds.Contains(b.Id!)).ToListAsync();
             var bookDict = books.ToDictionary(b => b.Id!, b => b);
-            var recordBookDict = records.ToDictionary(r => r.Id!, r => bookDict.TryGetValue(r.BookId, out var b) ? b?.Title : "N/A");
+            var recordBookDict = records.Where(r => r.Id != null).GroupBy(r => r.Id!).ToDictionary(g => g.Key, g => bookDict.TryGetValue(g.First().BookId, out var b) ? b?.Title : "N/A");
 
             var dtos = fines.Select(f => new FineDto
             {
@@ -83,12 +83,17 @@ namespace LibManagementSystem.API.Services
             return ApiResponse<List<FineDto>>.SuccessResult(dtos);
         }
 
-        public async Task<ApiResponse<FineDto>> PayFineAsync(string fineId)
+        public async Task<ApiResponse<FineDto>> PayFineAsync(string fineId, string? requestingUserId = null, bool isStaff = true)
         {
             var fine = await _context.Fines.Find(f => f.Id == fineId).FirstOrDefaultAsync();
             if (fine == null)
             {
                 return ApiResponse<FineDto>.FailureResult("Không tìm thấy phiếu phạt");
+            }
+
+            if (!isStaff && !string.IsNullOrWhiteSpace(requestingUserId) && fine.UserId != requestingUserId)
+            {
+                return ApiResponse<FineDto>.FailureResult("Bạn không có quyền thanh toán phiếu phạt của người khác");
             }
 
             if (fine.Status == FineStatus.Paid)

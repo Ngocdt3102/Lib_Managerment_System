@@ -6,6 +6,6 @@ namespace LibManagementSystem.API.Services
     {
         Task<ApiResponse<List<FineDto>>> GetAllFinesAsync(string? status);
         Task<ApiResponse<List<FineDto>>> GetMyFinesAsync(string userId);
-        Task<ApiResponse<FineDto>> PayFineAsync(string fineId);
+        Task<ApiResponse<FineDto>> PayFineAsync(string fineId, string? requestingUserId = null, bool isStaff = true);
     }
 }

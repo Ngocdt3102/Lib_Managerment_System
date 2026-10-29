@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Card, Table, Tag, Typography, Alert } from 'antd';
+import { Row, Col, Card, Table, Tag, Typography, Alert, Button, Popconfirm, message, Space } from 'antd';
 import { DollarOutlined, CheckCircleOutlined, ClockCircleOutlined, InfoCircleOutlined, BookOutlined } from '@ant-design/icons';
 import { fineService } from '../../services/fineService';
 import type { Fine } from '../../types';
@@ -10,6 +10,7 @@ const { Title, Text } = Typography;
 export const MemberFines: React.FC = () => {
   const [fines, setFines] = useState<Fine[]>([]);
   const [loading, setLoading] = useState(false);
+  const [payingId, setPayingId] = useState<string | null>(null);
 
   useEffect(() => {
     fetchMyFines();
@@ -26,6 +27,21 @@ export const MemberFines: React.FC = () => {
       console.error(err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handlePay = async (id: string) => {
+    try {
+      setPayingId(id);
+      const res = await fineService.payFine(id);
+      if (res.success) {
+        message.success('Nộp phạt trực tuyến thành công!');
+        fetchMyFines();
+      }
+    } catch (err: any) {
+      message.error(err.response?.data?.message || 'Không thể thanh toán khoản phạt này!');
+    } finally {
+      setPayingId(null);
     }
   };
 
@@ -99,6 +115,36 @@ export const MemberFines: React.FC = () => {
             </div>
           )}
         </div>
+      ),
+    },
+    {
+      title: 'Thao tác',
+      key: 'action',
+      render: (_: any, record: Fine) => (
+        <Space>
+          {record.status === 'Pending' && (
+            <Popconfirm
+              title="Xác nhận nộp phạt trực tuyến"
+              description={`Xác nhận thanh toán số tiền ${record.amount.toLocaleString('vi-VN')} VNĐ vào quỹ thư viện?`}
+              onConfirm={() => handlePay(record.id)}
+              okText="Nộp phạt ngay"
+              cancelText="Hủy"
+            >
+              <Button
+                type="primary"
+                size="small"
+                loading={payingId === record.id}
+                icon={<DollarOutlined />}
+                style={{ borderRadius: 6, background: '#059669', borderColor: '#059669', fontWeight: 600 }}
+              >
+                Nộp tiền
+              </Button>
+            </Popconfirm>
+          )}
+          {record.status === 'Paid' && (
+            <span style={{ fontSize: 12, color: '#059669', fontWeight: 600 }}>✓ Đã hoàn tất</span>
+          )}
+        </Space>
       ),
     },
   ];

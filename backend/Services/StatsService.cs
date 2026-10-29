@@ -23,8 +23,8 @@ namespace LibManagementSystem.API.Services
             var totalUsers = await _context.Users.CountDocumentsAsync(_ => true);
             var totalMembers = await _context.Users.CountDocumentsAsync(u => u.Role == UserRoles.Member);
 
-            var activeLoans = await _context.BorrowRecords.CountDocumentsAsync(r => r.Status == BorrowStatus.Borrowed || r.Status == BorrowStatus.Overdue);
-            var overdueLoans = await _context.BorrowRecords.CountDocumentsAsync(r => r.Status == BorrowStatus.Borrowed && DateTime.UtcNow > r.DueDate);
+            var activeLoans = await _context.BorrowRecords.CountDocumentsAsync(r => r.ReturnDate == null && r.Status != BorrowStatus.Returned && r.Status != BorrowStatus.Lost);
+            var overdueLoans = await _context.BorrowRecords.CountDocumentsAsync(r => r.ReturnDate == null && r.Status != BorrowStatus.Lost && DateTime.UtcNow > r.DueDate);
 
             var paidFines = await _context.Fines.Find(f => f.Status == FineStatus.Paid).ToListAsync();
             decimal totalFineCollected = paidFines.Sum(f => f.Amount);
@@ -46,14 +46,22 @@ namespace LibManagementSystem.API.Services
             var recentBooks = await _context.Books.Find(b => recentBookIds.Contains(b.Id!)).ToListAsync();
             var bookDict = recentBooks.ToDictionary(b => b.Id!, b => b.Title);
 
-            var recentLoans = recentRecords.Select(r => new RecentLoanDto
+            var recentLoans = recentRecords.Select(r =>
             {
-                Id = r.Id ?? string.Empty,
-                BookTitle = bookDict.TryGetValue(r.BookId, out var bTitle) ? bTitle : "N/A",
-                UserFullName = userDict.TryGetValue(r.UserId, out var uName) ? uName : "N/A",
-                BorrowDate = r.BorrowDate,
-                DueDate = r.DueDate,
-                Status = r.Status
+                string status = r.Status;
+                if (r.ReturnDate == null && r.Status != BorrowStatus.Lost && DateTime.UtcNow > r.DueDate)
+                {
+                    status = BorrowStatus.Overdue;
+                }
+                return new RecentLoanDto
+                {
+                    Id = r.Id ?? string.Empty,
+                    BookTitle = bookDict.TryGetValue(r.BookId, out var bTitle) ? bTitle : "N/A",
+                    UserFullName = userDict.TryGetValue(r.UserId, out var uName) ? uName : "N/A",
+                    BorrowDate = r.BorrowDate,
+                    DueDate = r.DueDate,
+                    Status = status
+                };
             }).ToList();
 
             // Lấy top 5 sách được mượn nhiều nhất

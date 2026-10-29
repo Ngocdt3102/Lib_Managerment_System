@@ -39,7 +39,9 @@ namespace LibManagementSystem.API.Services
             var existingLoan = await _context.BorrowRecords.Find(r =>
                 r.UserId == targetUserId &&
                 r.BookId == dto.BookId &&
-                (r.Status == BorrowStatus.Borrowed || r.Status == BorrowStatus.Overdue)
+                r.ReturnDate == null &&
+                r.Status != BorrowStatus.Returned &&
+                r.Status != BorrowStatus.Lost
             ).FirstOrDefaultAsync();
 
             if (existingLoan != null)
@@ -62,7 +64,7 @@ namespace LibManagementSystem.API.Services
             await _context.BorrowRecords.InsertOneAsync(borrowRecord);
 
             // Giảm số lượng sách khả dụng
-            book.AvailableCopies -= 1;
+            book.AvailableCopies = Math.Max(0, book.AvailableCopies - 1);
             book.UpdatedAt = DateTime.UtcNow;
             await _context.Books.ReplaceOneAsync(b => b.Id == book.Id, book);
 
@@ -78,9 +80,9 @@ namespace LibManagementSystem.API.Services
                 return ApiResponse<BorrowRecordDto>.FailureResult("Không tìm thấy phiếu mượn");
             }
 
-            if (record.Status == BorrowStatus.Returned)
+            if (record.ReturnDate != null || record.Status == BorrowStatus.Returned || record.Status == BorrowStatus.Lost)
             {
-                return ApiResponse<BorrowRecordDto>.FailureResult("Phiếu mượn này đã được hoàn trả trước đó");
+                return ApiResponse<BorrowRecordDto>.FailureResult("Phiếu mượn này đã được hoàn trả hoặc kết thúc trước đó");
             }
 
             var user = await _context.Users.Find(u => u.Id == record.UserId).FirstOrDefaultAsync();
@@ -97,11 +99,6 @@ namespace LibManagementSystem.API.Services
             {
                 overdueDays = (int)Math.Ceiling((now - record.DueDate).TotalDays);
                 overdueFineAmount = overdueDays * DAILY_OVERDUE_FINE;
-                record.Status = BorrowStatus.Overdue;
-            }
-            else
-            {
-                record.Status = BorrowStatus.Returned;
             }
 
             if (dto.IsDamagedOrLost)
@@ -110,12 +107,17 @@ namespace LibManagementSystem.API.Services
             }
             else
             {
-                // Cộng lại số lượng sách khả dụng
+                record.Status = BorrowStatus.Returned;
+
+                // Cộng lại số lượng sách khả dụng (chỉ cộng nếu chưa vượt quá TotalCopies)
                 if (book != null)
                 {
-                    book.AvailableCopies += 1;
-                    book.UpdatedAt = DateTime.UtcNow;
-                    await _context.Books.ReplaceOneAsync(b => b.Id == book.Id, book);
+                    if (book.AvailableCopies < book.TotalCopies)
+                    {
+                        book.AvailableCopies += 1;
+                        book.UpdatedAt = DateTime.UtcNow;
+                        await _context.Books.ReplaceOneAsync(b => b.Id == book.Id, book);
+                    }
                 }
             }
 
@@ -125,23 +127,28 @@ namespace LibManagementSystem.API.Services
             decimal totalFine = overdueFineAmount + (dto.IsDamagedOrLost ? dto.PenaltyAmount : 0m);
             if (totalFine > 0)
             {
-                string reason = overdueDays > 0 ? $"Quá hạn {overdueDays} ngày ({overdueFineAmount:N0} VNĐ)" : "";
-                if (dto.IsDamagedOrLost)
+                // Kiểm tra xem đã có phiếu phạt cho phiếu mượn này chưa
+                var existingFine = await _context.Fines.Find(f => f.BorrowRecordId == record.Id).FirstOrDefaultAsync();
+                if (existingFine == null)
                 {
-                    reason += string.IsNullOrWhiteSpace(reason) ? dto.PenaltyReason : $" + {dto.PenaltyReason}";
+                    string reason = overdueDays > 0 ? $"Quá hạn {overdueDays} ngày ({overdueFineAmount:N0} VNĐ)" : "";
+                    if (dto.IsDamagedOrLost)
+                    {
+                        reason += string.IsNullOrWhiteSpace(reason) ? dto.PenaltyReason : $" + {dto.PenaltyReason}";
+                    }
+
+                    var fine = new Fine
+                    {
+                        BorrowRecordId = record.Id!,
+                        UserId = record.UserId,
+                        Amount = totalFine,
+                        Reason = reason,
+                        Status = FineStatus.Pending,
+                        CreatedAt = DateTime.UtcNow
+                    };
+
+                    await _context.Fines.InsertOneAsync(fine);
                 }
-
-                var fine = new Fine
-                {
-                    BorrowRecordId = record.Id!,
-                    UserId = record.UserId,
-                    Amount = totalFine,
-                    Reason = reason,
-                    Status = FineStatus.Pending,
-                    CreatedAt = DateTime.UtcNow
-                };
-
-                await _context.Fines.InsertOneAsync(fine);
             }
 
             var resultDto = MapToBorrowRecordDto(record, user, book);
@@ -166,15 +173,7 @@ namespace LibManagementSystem.API.Services
 
         public async Task<ApiResponse<List<BorrowRecordDto>>> GetAllLoansAsync(string? status)
         {
-            var filterBuilder = Builders<BorrowRecord>.Filter;
-            var filter = filterBuilder.Empty;
-
-            if (!string.IsNullOrWhiteSpace(status))
-            {
-                filter &= filterBuilder.Eq(r => r.Status, status);
-            }
-
-            var records = await _context.BorrowRecords.Find(filter)
+            var records = await _context.BorrowRecords.Find(_ => true)
                 .SortByDescending(r => r.CreatedAt)
                 .ToListAsync();
 
@@ -192,6 +191,11 @@ namespace LibManagementSystem.API.Services
                 bookDict.TryGetValue(r.BookId, out var b) ? b : null
             )).ToList();
 
+            if (!string.IsNullOrWhiteSpace(status))
+            {
+                dtos = dtos.Where(d => d.Status.Equals(status, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
             return ApiResponse<List<BorrowRecordDto>>.SuccessResult(dtos);
         }
 
@@ -203,13 +207,19 @@ namespace LibManagementSystem.API.Services
                 return ApiResponse<BorrowRecordDto>.FailureResult("Không tìm thấy phiếu mượn");
             }
 
-            if (record.Status == BorrowStatus.Returned || record.Status == BorrowStatus.Lost)
+            if (record.ReturnDate != null || record.Status == BorrowStatus.Returned || record.Status == BorrowStatus.Lost)
             {
-                return ApiResponse<BorrowRecordDto>.FailureResult("Không thể gia hạn phiếu mượn đã kết thúc");
+                return ApiResponse<BorrowRecordDto>.FailureResult("Không thể gia hạn phiếu mượn đã kết thúc hoặc đã trả");
+            }
+
+            if (DateTime.UtcNow > record.DueDate)
+            {
+                return ApiResponse<BorrowRecordDto>.FailureResult("Phiếu mượn đã quá hạn, không thể gia hạn. Vui lòng hoàn trả sách!");
             }
 
             int days = extendDays > 0 ? extendDays : 7;
             record.DueDate = record.DueDate.AddDays(days);
+            record.Status = BorrowStatus.Borrowed;
 
             await _context.BorrowRecords.ReplaceOneAsync(r => r.Id == borrowRecordId, record);
 
@@ -222,8 +232,12 @@ namespace LibManagementSystem.API.Services
         private static BorrowRecordDto MapToBorrowRecordDto(BorrowRecord record, User? user, Book? book)
         {
             decimal? estFine = null;
-            if (record.Status == BorrowStatus.Borrowed && DateTime.UtcNow > record.DueDate)
+            string effectiveStatus = record.Status;
+
+            // Nếu chưa trả và đã quá hạn thì gán trạng thái động là Overdue
+            if (record.ReturnDate == null && record.Status != BorrowStatus.Lost && DateTime.UtcNow > record.DueDate)
             {
+                effectiveStatus = BorrowStatus.Overdue;
                 int overdueDays = (int)Math.Ceiling((DateTime.UtcNow - record.DueDate).TotalDays);
                 estFine = overdueDays * DAILY_OVERDUE_FINE;
             }
@@ -240,7 +254,7 @@ namespace LibManagementSystem.API.Services
                 BorrowDate = record.BorrowDate,
                 DueDate = record.DueDate,
                 ReturnDate = record.ReturnDate,
-                Status = record.Status,
+                Status = effectiveStatus,
                 Notes = record.Notes,
                 EstimatedFine = estFine,
                 CreatedAt = record.CreatedAt

@@ -97,11 +97,11 @@ export const LibrarianBorrows: React.FC = () => {
     }
   };
 
-  const activeLoans = loans.filter((l) => l.status === 'Borrowed');
+  const activeLoans = loans.filter((l) => l.status === 'Borrowed' && !l.returnDate && !dayjs().isAfter(dayjs(l.dueDate)));
   const overdueLoans = loans.filter(
-    (l) => l.status === 'Borrowed' && dayjs().isAfter(dayjs(l.dueDate))
+    (l) => !l.returnDate && l.status !== 'Returned' && l.status !== 'Lost' && (l.status === 'Overdue' || dayjs().isAfter(dayjs(l.dueDate)))
   );
-  const returnedLoans = loans.filter((l) => l.status === 'Returned');
+  const returnedLoans = loans.filter((l) => l.status === 'Returned' || !!l.returnDate);
   const lostLoans = loans.filter((l) => l.status === 'Lost');
 
   const getFilteredLoans = () => {
@@ -174,7 +174,7 @@ export const LibrarianBorrows: React.FC = () => {
       title: 'Hạn trả',
       key: 'dueDate',
       render: (_: any, record: BorrowRecord) => {
-        const isOverdue = record.status === 'Borrowed' && dayjs().isAfter(dayjs(record.dueDate));
+        const isOverdue = !record.returnDate && (record.status === 'Overdue' || dayjs().isAfter(dayjs(record.dueDate)));
         return (
           <span style={{ color: isOverdue ? '#dc2626' : '#1e293b', fontWeight: isOverdue ? 700 : 400 }}>
             {dayjs(record.dueDate).format('DD/MM/YYYY')}
@@ -193,13 +193,13 @@ export const LibrarianBorrows: React.FC = () => {
       title: 'Trạng thái',
       key: 'status',
       render: (_: any, record: BorrowRecord) => {
-        if (record.status === 'Returned') {
+        if (record.status === 'Returned' || !!record.returnDate) {
           return <Tag color="green" icon={<CheckCircleOutlined />}>Đã trả</Tag>;
         }
         if (record.status === 'Lost') {
           return <Tag color="red">Hỏng/Mất</Tag>;
         }
-        if (dayjs().isAfter(dayjs(record.dueDate))) {
+        if (record.status === 'Overdue' || dayjs().isAfter(dayjs(record.dueDate))) {
           return (
             <Tag color="volcano" icon={<WarningOutlined />} className="pulse-badge">
               Quá hạn {record.estimatedFine ? `(Phạt ~${record.estimatedFine.toLocaleString('vi-VN')}đ)` : ''}
@@ -214,7 +214,7 @@ export const LibrarianBorrows: React.FC = () => {
       key: 'action',
       render: (_: any, record: BorrowRecord) => (
         <Space size="small">
-          {record.status !== 'Returned' && record.status !== 'Lost' && (
+          {!record.returnDate && record.status !== 'Returned' && record.status !== 'Lost' && (
             <>
               <Button
                 type="primary"
@@ -239,8 +239,11 @@ export const LibrarianBorrows: React.FC = () => {
               </Button>
             </>
           )}
-          {record.status === 'Returned' && (
+          {(record.status === 'Returned' || !!record.returnDate) && (
             <span style={{ fontSize: 12, color: '#94a3b8' }}>Đã đóng phiếu</span>
+          )}
+          {record.status === 'Lost' && (
+            <span style={{ fontSize: 12, color: '#ef4444' }}>Đã lập biên bản mất</span>
           )}
         </Space>
       ),

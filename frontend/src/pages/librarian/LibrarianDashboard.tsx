@@ -122,7 +122,7 @@ export const LibrarianDashboard: React.FC = () => {
       title: 'Thao tác',
       key: 'action',
       render: (_: any, record: RecentLoan) => {
-        if (record.status !== 'Returned') {
+        if (record.status !== 'Returned' && record.status !== 'Lost') {
           return (
             <Button
               type="primary"
