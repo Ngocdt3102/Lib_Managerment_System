@@ -1,0 +1,35 @@
+name: lib_management_system_prod
+
+services:
+  # 1. ASP.NET Core Web API Backend Container
+  backend:
+    image: dtngoc3103/lib-management-backend:latest
+    container_name: lib_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - MongoDbSettings__ConnectionString=${MONGODB_ATLAS_URI}
+      - MongoDbSettings__DatabaseName=LibManagementDb
+      - JwtSettings__SecretKey=LibManagementSystem_Super_Secret_Key_2026_Key_Must_Be_Long_Enough!
+      - JwtSettings__Issuer=LibManagementSystemAPI
+      - JwtSettings__Audience=LibManagementSystemClient
+      - JwtSettings__ExpirationInMinutes=1440
+    networks:
+      - lib_network
+
+  # 2. React.js Frontend Container (Nginx)
+  frontend:
+    image: dtngoc3103/lib-management-frontend:latest
+    container_name: lib_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - lib_network
+
+networks:
+  lib_network:
+    driver: bridge
